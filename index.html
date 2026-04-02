@@ -77,7 +77,9 @@
     .win-icon { font-size: 32px; flex-shrink: 0; }
     .win-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
     .win-text { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.5; }
-    .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; }
+    .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; overflow: hidden; box-sizing: border-box; }
+    .funfact-logo { flex-shrink: 0; }
+    .funfact-body { flex: 1; min-width: 0; overflow: hidden; }
     .funfact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
     .funfact-name { font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
     .funfact-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
@@ -270,11 +272,12 @@
         <div class="sec-pip"></div>
       </div>
       <div class="funfact">
-        <div style="flex-shrink:0;text-align:center;">
+        <div class="funfact-logo">
           <div style="width:90px;height:90px;border-radius:8px;border:3px solid var(--gold);overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
             <img src="https://cdn.shopify.com/s/files/1/1368/9255/files/Screen_Shot_2022-05-16_at_3.57.48_PM_480x480.png?v=1652734681" alt="Zweig Group" style="width:100%;height:100%;object-fit:contain;padding:4px;"/>
+          </div>
         </div>
-        <div>
+        <div class="funfact-body">
           <div class="funfact-label">Zweig Group · Strategic Partnership</div>
           <div class="funfact-name">SN + Zweig Group: Stronger Together for AEC</div>
           <div class="funfact-text">Stambaugh Ness has entered a strategic partnership with Zweig Group, the leading research, publishing, and advisory firm serving the AEC industry. This collaboration brings our clients and team members expanded access to industry benchmarking data, leadership development resources, and AEC-specific business intelligence — deepening our position as the go-to firm for architecture, engineering, and construction businesses. <span class="en">✏ Update as needed</span></div>
