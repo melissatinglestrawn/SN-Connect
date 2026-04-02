@@ -83,60 +83,58 @@
     .funfact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
     .funfact-name { font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
     .funfact-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; word-wrap: break-word; overflow-wrap: break-word; }
-    .spotlight {
-  background: var(--charcoal);
-  margin: 0;
-  padding: 40px 0;
-}
-   .spotlight {
-  background: var(--charcoal);
-  margin: 0;
-  padding: 40px 0;
-}
-
-.rec-wrap {
-  background: var(--off-white);
-  border-top: 2px solid var(--gold);
-  margin: 0;
-  padding: 32px 0;
-}
-
-@media (max-width: 580px) {
-  .masthead,
-  .content,
-  .leadership,
-  .footer,
-  .footer-bottom,
-  .nav {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .leadership {
-    margin: 0 -24px;
-  }
-
-  .spotlight,
-  .rec-wrap {
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .funfact { flex-direction: column; gap: 12px; }
-  .win-callout { flex-direction: column; gap: 10px; }
-  .events-grid, .rec-grid { grid-template-columns: 1fr; }
-  .masthead { flex-direction: column; align-items: flex-start; }
-  .masthead-right { text-align: left; }
-  .footer { flex-direction: column; }
-}
+    .spotlight { background: var(--charcoal); margin: 0 -52px; padding: 40px 52px; }
+    .spotlight .sec-label { color: rgba(255,255,255,0.5); }
+    .spotlight .sec-line { background: rgba(255,255,255,0.15); }
+    .spotlight-name { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .spotlight-hed { font-size: 22px; font-weight: 800; color: var(--white); line-height: 1.3; margin-bottom: 12px; }
+    .spotlight-body { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; }
+    .ann-list { list-style: none; }
+    .ann-item { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+    .ann-item:last-child { border-bottom: none; }
+    .ann-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 7px; justify-self: center; }
+    .ann-title { font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .ann-body { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+    .rec-wrap { background: var(--off-white); border-top: 2px solid var(--gold); padding: 32px; margin: 0 -52px; padding-left: 52px; padding-right: 52px; }
+    .rec-intro { font-size: 13px; font-style: italic; color: var(--text-mid); margin-bottom: 24px; }
+    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .rec-card { background: var(--white); border: 1px solid var(--rule); padding: 18px; display: flex; gap: 13px; align-items: flex-start; }
+    .rec-av { width: 38px; height: 38px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--gold); flex-shrink: 0; }
+    .rec-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 1px; }
+    .rec-role { font-size: 10.5px; color: var(--text-light); margin-bottom: 6px; letter-spacing: 0.03em; }
+    .rec-note { font-size: 12px; color: var(--text-mid); font-style: italic; line-height: 1.55; }
+    .res-list { list-style: none; }
+    .res-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); gap: 16px; }
+    .res-item:last-child { border-bottom: none; }
+    .res-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
+    .res-title { font-size: 13.5px; font-weight: 600; color: var(--text); }
+    .res-cta { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); text-decoration: none; padding: 6px 12px; border: 1.5px solid var(--green); white-space: nowrap; transition: background 0.15s, color 0.15s; }
+    .res-cta:hover { background: var(--green); color: var(--white); }
+    .photo-moment { background: var(--light-gray); border: 1px solid var(--rule); overflow: hidden; }
+    .photo-placeholder { background: var(--mid-gray); height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+    .photo-placeholder-icon { font-size: 36px; opacity: 0.4; }
+    .photo-placeholder-text { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); }
+    .photo-caption { padding: 14px 18px; font-size: 12px; font-style: italic; color: var(--text-mid); border-top: 1px solid var(--rule); }
+    .footer { margin-top: 56px; background: var(--charcoal); padding: 32px 52px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-wm { font-size: 14px; font-weight: 800; color: var(--white); }
+    .footer-wm span { color: var(--gold); }
+    .footer-sub { font-size: 10px; color: rgba(255,255,255,0.38); letter-spacing: 0.09em; margin-top: 3px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: 9.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { background: var(--green-dark); padding: 11px 52px; text-align: center; font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 0.07em; }
+    .en { display: inline-block; background: #fffde7; border: 1px dashed var(--gold); border-radius: 2px; padding: 0 5px; font-size: 9.5px; font-style: normal; color: #7a5a00; margin-left: 4px; font-weight: 700; vertical-align: middle; }
+    @media (max-width: 580px) {
+      .masthead, .content, .leadership, .rec-wrap, .spotlight, .footer, .footer-bottom, .nav { padding-left: 24px; padding-right: 24px; }
+      .leadership, .rec-wrap, .spotlight { margin: 0 -24px; }
+      .funfact { flex-direction: column; gap: 12px; }
       .win-callout { flex-direction: column; gap: 10px; }
       .events-grid, .rec-grid { grid-template-columns: 1fr; }
       .masthead { flex-direction: column; align-items: flex-start; }
       .masthead-right { text-align: left; }
       .footer { flex-direction: column; }
     }
-  </style>
+    </style>
 </head>
 <body>
 <div class="page" style="position:relative;">
