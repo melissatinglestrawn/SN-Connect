@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SN Pulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green:       #00534C;
+      --green-dark:  #003d38;
+      --gold:        #FFB81C;
+      --gold-pale:   #FFFBF0;
+      --charcoal:    #373A36;
+      --teal:        #007681;
+      --white:       #FFFFFF;
+      --off-white:   #F9F9F7;
+      --light-gray:  #F0F0EE;
+      --mid-gray:    #E2E2DF;
+      --text:        #1E1E1C;
+      --text-mid:    #555550;
+      --text-light:  #92928E;
+      --rule:        #E5E5E2;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--light-gray); font-family: 'Open Sans', Corbel, sans-serif; color: var(--text); font-size: 15px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    .page { max-width: 1000px; margin: 0 auto; background: var(--white); box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 8px 48px rgba(0,0,0,0.08); }
+    .masthead { background: var(--white); border-top: 4px solid var(--green); padding: 36px 52px 28px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; position: relative; }
+    .masthead::after { content: ''; position: absolute; bottom: 0; left: 52px; right: 52px; height: 1px; background: var(--rule); }
+    .masthead::before { content: ''; position: absolute; top: 4px; left: 0; right: 0; height: 2px; background: var(--gold); }
+    .newsletter-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 42px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; line-height: 1; }
+    .newsletter-title em { font-style: italic; color: var(--green); }
+    .masthead-right { text-align: right; flex-shrink: 0; padding-bottom: 4px; }
+    .issue-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .issue-date { font-size: 13px; font-weight: 700; color: var(--charcoal); }
+    .issue-vol { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+    .nav { background: var(--off-white); border-bottom: 1px solid var(--rule); padding: 0 52px; display: flex; overflow-x: auto; gap: 0; }
+    .nav a { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 11px 18px 11px 0; white-space: nowrap; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
+    .nav a:hover { color: var(--green); border-bottom-color: var(--gold); }
+    .nav a + a { padding-left: 18px; border-left: 1px solid var(--rule); }
+    .content { padding: 0 52px; }
+    .sec-head { display: flex; align-items: center; gap: 16px; margin: 52px 0 28px; }
+    .sec-label { font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); white-space: nowrap; }
+    .sec-line { flex: 1; height: 2px; background: var(--rule); }
+    .sec-pip { width: 28px; height: 4px; background: var(--gold); flex-shrink: 0; border-radius: 2px; }
+    .leadership { background: var(--green); margin: 0 -52px; padding: 44px 52px; position: relative; overflow: hidden; }
+    .leadership::before { content: '\201C'; font-family: Georgia, serif; font-size: 280px; line-height: 0.75; color: rgba(255,184,28,0.08); position: absolute; top: 20px; left: 36px; pointer-events: none; user-select: none; }
+    .leadership .sec-label { color: var(--gold); opacity: 0.85; }
+    .leadership .sec-line { background: rgba(255,184,28,0.3); }
+    .leadership .sec-pip { background: var(--gold); }
+    .leadership-quote { font-size: 19px; font-weight: 300; line-height: 1.7; color: var(--white); font-style: italic; margin-bottom: 24px; position: relative; z-index: 1; border-left: 3px solid var(--gold); padding-left: 20px; }
+    .attrib { display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+    .attrib-name { font-size: 13px; font-weight: 700; color: var(--gold); }
+    .attrib-title { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 1px; }
+    .feature-kicker { font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .feature-hed { font-size: 27px; font-weight: 800; color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .feature-dek { font-size: 15px; font-weight: 400; font-style: italic; color: var(--text-mid); line-height: 1.65; padding: 14px 16px; border-left: 3px solid var(--gold); background: var(--gold-pale); margin-bottom: 18px; }
+    .feature-body { font-size: 14.5px; line-height: 1.85; color: var(--text-mid); }
+    .feature-body p + p { margin-top: 13px; }
+    .cta-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--green); text-decoration: none; padding: 9px 18px; transition: background 0.15s; }
+    .cta-link:hover { background: var(--green-dark); }
+    .cta-link::after { content: '→'; font-size: 12px; }
+    .rule-gold { display: flex; align-items: center; gap: 0; margin: 52px 0; }
+    .rule-gold::before, .rule-gold::after { content: ''; flex: 1; height: 2px; background: var(--mid-gray); }
+    .rule-gold-center { width: 56px; height: 5px; background: var(--gold); margin: 0 16px; border-radius: 3px; }
+    .events-intro { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px; padding: 16px 20px; background: var(--off-white); border-left: 3px solid var(--green); }
+    .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .event-card { background: var(--white); border: 1px solid var(--rule); border-bottom: 3px solid var(--green); padding: 20px; transition: box-shadow 0.15s, transform 0.15s; overflow: hidden; }
+    .event-card:hover { box-shadow: 0 4px 20px rgba(0,83,76,0.10); transform: translateY(-2px); }
+    .event-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--light-gray); padding: 4px 10px; margin-bottom: 12px; }
+    .event-badge .mo { font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+    .event-badge .dy { font-size: 17px; font-weight: 800; color: var(--charcoal); line-height: 1; }
+    .event-title { font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .event-meta { font-size: 11px; color: var(--text-light); margin-bottom: 7px; }
+    .event-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.6; }
+    .win-callout { background: var(--green); padding: 22px 28px; display: flex; align-items: center; gap: 20px; }
+    .win-icon { font-size: 32px; flex-shrink: 0; }
+    .win-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .win-text { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; overflow: hidden; box-sizing: border-box; }
+    .funfact-logo { flex-shrink: 0; }
+    .funfact-body { flex: 1; min-width: 0; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
+    .funfact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .funfact-name { font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+    .funfact-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; word-wrap: break-word; overflow-wrap: break-word; }
+    .spotlight { background: var(--charcoal); margin: 0 -52px; padding: 40px 52px; }
+    .spotlight .sec-label { color: rgba(255,255,255,0.5); }
+    .spotlight .sec-line { background: rgba(255,255,255,0.15); }
+    .spotlight-name { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .spotlight-hed { font-size: 22px; font-weight: 800; color: var(--white); line-height: 1.3; margin-bottom: 12px; }
+    .spotlight-body { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; }
+    .ann-list { list-style: none; }
+    .ann-item { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+    .ann-item:last-child { border-bottom: none; }
+    .ann-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 7px; justify-self: center; }
+    .ann-title { font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .ann-body { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+    .rec-wrap { background: var(--off-white); border-top: 2px solid var(--gold); padding: 32px; margin: 0 -52px; padding-left: 52px; padding-right: 52px; }
+    .rec-intro { font-size: 13px; font-style: italic; color: var(--text-mid); margin-bottom: 24px; }
+    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .rec-card { background: var(--white); border: 1px solid var(--rule); padding: 18px; display: flex; gap: 13px; align-items: flex-start; }
+    .rec-av { width: 38px; height: 38px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--gold); flex-shrink: 0; }
+    .rec-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 1px; }
+    .rec-role { font-size: 10.5px; color: var(--text-light); margin-bottom: 6px; letter-spacing: 0.03em; }
+    .rec-note { font-size: 12px; color: var(--text-mid); font-style: italic; line-height: 1.55; }
+    .res-list { list-style: none; }
+    .res-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); gap: 16px; }
+    .res-item:last-child { border-bottom: none; }
+    .res-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
+    .res-title { font-size: 13.5px; font-weight: 600; color: var(--text); }
+    .res-cta { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); text-decoration: none; padding: 6px 12px; border: 1.5px solid var(--green); white-space: nowrap; transition: background 0.15s, color 0.15s; }
+    .res-cta:hover { background: var(--green); color: var(--white); }
+    .photo-moment { background: var(--light-gray); border: 1px solid var(--rule); overflow: hidden; }
+    .photo-placeholder { background: var(--mid-gray); height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+    .photo-placeholder-icon { font-size: 36px; opacity: 0.4; }
+    .photo-placeholder-text { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); }
+    .photo-caption { padding: 14px 18px; font-size: 12px; font-style: italic; color: var(--text-mid); border-top: 1px solid var(--rule); }
+    .footer { margin-top: 56px; background: var(--charcoal); padding: 32px 52px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-wm { font-size: 14px; font-weight: 800; color: var(--white); }
+    .footer-wm span { color: var(--gold); }
+    .footer-sub { font-size: 10px; color: rgba(255,255,255,0.38); letter-spacing: 0.09em; margin-top: 3px; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: 9.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { background: var(--green-dark); padding: 11px 52px; text-align: center; font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 0.07em; }
+    .en { display: inline-block; background: #fffde7; border: 1px dashed var(--gold); border-radius: 2px; padding: 0 5px; font-size: 9.5px; font-style: normal; color: #7a5a00; margin-left: 4px; font-weight: 700; vertical-align: middle; }
+    @media (max-width: 580px) {
+      .masthead, .content, .leadership, .rec-wrap, .spotlight, .footer, .footer-bottom, .nav { padding-left: 24px; padding-right: 24px; }
+      .leadership, .rec-wrap, .spotlight { margin: 0 -24px; }
+      .funfact { flex-direction: column; gap: 12px; }
+      .win-callout { flex-direction: column; gap: 10px; }
+      .events-grid, .rec-grid { grid-template-columns: 1fr; }
+      .masthead { flex-direction: column; align-items: flex-start; }
+      .masthead-right { text-align: left; }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="page" style="position:relative;">
+  
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-left">
+      <div class="newsletter-title">SN <em>Pulse</em></div>
+      <div class="issue-label" style="margin-top:8px;">Internal Communications Newsletter</div>
+    </div>
+    <div class="masthead-right">
+      <img src="https://www.stambaughness.com/wp-content/uploads/2016/11/Stambaugh-Ness-Main-Logo-1-1.png" alt="Stambaugh Ness" style="height:42px;display:block;margin-bottom:10px;margin-left:auto;"/>
+      <div class="issue-date">April 2026</div>
+      <div class="issue-vol">Vol. 1 &nbsp;·&nbsp; Issue 1</div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#leadership">Leadership</a>
+    <a href="#feature">Feature</a>
+    <a href="#events">Live Events</a>
+    <a href="#zweig">Partnership</a>
+    <a href="#spotlight">Spotlight</a>
+    <a href="#resources">Resources</a>
+  </nav>
+
+  <main class="content">
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <div class="leadership">
+        <div class="sec-head" style="margin-top:0">
+          <span class="sec-label">From Leadership</span>
+          <div class="sec-line"></div>
+          <div class="sec-pip"></div>
+        </div>
+        <blockquote class="leadership-quote">
+          "At Stambaugh Ness, our people development and engagement strategy is a priority—and this year, we’re putting that into action. We’re making a firm-wide commitment to learning and development that is intentional, aligned to our growth priorities and the capabilities we need to perform at a high level, and focused on elevating our professionals through individualized learning paths.
+Introducing SN Pulse—a way to stay connected to what’s happening across the firm, from practice updates to the people driving our work forward. This is just the beginning. When our people grow—and stay connected—our firm grows."
+        </blockquote>
+        <div class="attrib">
+          <img src="https://www.stambaughness.com/wp-content/uploads/2022/03/2016-photo-e1458928697926.png.webp" alt="Katie Bochniak" style="width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;"/>
+          <div>
+            <div class="attrib-name">Katie Bochniak</div>
+            <div class="attrib-title">Chief People &amp; Culture Officer, Stambaugh Ness</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE ARTICLE -->
+<section id="feature">
+  <div class="sec-head">
+    <span class="sec-label">Feature Spotlight</span>
+    <div class="sec-line"></div>
+    <div class="sec-pip"></div>
+  </div>
+
+  <div class="feature-kicker">Learning &amp; Development · Firm-Wide</div>
+  <h2 class="feature-hed">This Year, Growth Is on the Calendar</h2>
+  <p class="feature-dek"><em>The Skills &amp; Performance Institute is launching a full live training calendar for 2026 — built with every role and every practice area in mind.</em></p>
+
+  <div class="feature-body">
+    <img
+      src="https://github.com/StambaughNess/SN-Pulse/blob/2007d60ce4b01e8f34ae75956f204ceefd44fecb/images/New%20SPI%20Employee%20Home%20Page.png?raw=true"
+      alt="Skills & Performance Institute feature thumbnail"
+      class="feature-thumb"
+      style="float:right; width:250px; max-width:40%; height:auto; margin:0 0 14px 18px; border-radius:8px; display:block;"
+    />
+
+    <p><b>Learning at Stambaugh Ness is getting a new look.</b>
+    Over the rest of 2026, the Skills &amp; Performance Institute (SPI) is rolling out a structured, <b> firm-wide training calendar</b> spanning technical skill-building, leadership development, and professional growth.</p>
+
+    <p>These aren't check-the-box sessions — they're experiences designed to connect to real work and real growth.</p>
+
+    <p>In addition, SPI is expanding access to learning in a significant way, with the introduction of <b>tailored practice area development plans</b> based on your team needs, and <b>individual development plans </b> aligned with your career growth. SPI will showcase <b>20 new learning catalogs </b> and more than <b> 400 new courses </b> available for internal use. These new courses will be featured in the May edition of SN Pulse.</p>
+
+    <p>Watch for monthly spotlights in SN Pulse and explore SPI to discover opportunities, register, and track your progress.</p>
+
+    <div style="clear:both;"></div>
+  </div>
+
+  <a href="https://spi.stambaughness.com" class="cta-link">Explore in SPI</a>
+</section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- EVENTS & TRAINING -->
+    <section id="events">
+      <div class="sec-head">
+        <span class="sec-label">Upcoming Live Events &amp; Training</span>
+        <div class="sec-line"></div>
+        <div class="sec-pip"></div>
+      </div>
+      <p class="events-intro">This quarter's live training sessions mark the first step in a firm-wide rollout of intentional development at Stambaugh Ness — the foundation for more robust practice area development and personalized individual growth opportunities on the horizon. Every team member is expected to attend at least one session per quarter. Register and track your progress in SPI.</p>
+      <div class="events-grid">
+        <div class="event-card">
+          <img src="https://www.odgersinterim.com/fileadmin/_processed_/d/6/csm_Active_Listening_in_the_workplace_90134e6f12.jpg" alt="Active Listening" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+          <div class="event-badge"><span class="mo">APR</span><span class="dy">2026</span></div>
+          <div class="event-title">Active Listening: The #1 Power Skill</div>
+          <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
+          <div class="event-desc">Learn to listen with the intent to understand — not just respond. Practice presence, paraphrasing, and reflective listening in client and team conversations.</div>
+        <br>
+           <a href="https://spi.stambaughness.com/learn/courses/844/active-listening-the-1-power-skill" target="_blank"
+   style="display:inline-block; color:#ffffff; background:#1f6f6a; padding:6px 12px; border-radius:3px; font-weight:600; text-decoration:none;">
+   Registration is Open! →
+</a>
+        </div>
+        <div class="event-card">
+          <img src="https://www.toastmasters.org/magazine/magazine-issues/2022/apr/medias/images/pubs-and-magazine/2022-digital-magazine/04/awkward-conversations/22-awkward-conversations-main.png" alt="Coaching Conversations" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+          <div class="event-badge"><span class="mo">MAY</span><span class="dy">2026</span></div>
+          <div class="event-title">Coaching Conversations</div>
+          <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
+          <div class="event-desc">Coaching isn't just a manager tool — it's how every professional accelerates growth. Learn when to coach vs. advise and how to hold a high-impact coaching conversation.</div>
+             </div>
+        <div class="event-card">
+          <img src="https://blog.insynctraining.com/hubfs/09152020%20Facilitation%20Tips%20Series%20Blog%20Part%202%20Feedback.png" alt="Giving and Receiving Feedback" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+          <div class="event-badge"><span class="mo">JUN</span><span class="dy">2026</span></div>
+          <div class="event-title">Giving &amp; Receiving Feedback</div>
+          <div class="event-meta">Live Above the Line &nbsp;·&nbsp; All Staff</div>
+          <div class="event-desc">Master the Situation-Behavior-Impact feedback model. Build a culture where feedback is expected, welcomed, and acted on at every level of the organization.</div>
+        </div>
+        <div class="event-card" style="background:#F9F9F7;border-style:dashed;display:flex;align-items:center;justify-content:center;text-align:center;">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#92928E;margin-bottom:8px;">Requirement</div>
+            <div style="font-size:22px;font-weight:800;color:#00534C;line-height:1.2;">1 Session<br/>Per Quarter</div>
+            <div style="font-size:11px;color:#92928E;margin-top:8px;">All sessions tracked<br/>in SPI / Rippling</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIRM WIN CALLOUT -->
+    <div class="win-callout" style="margin:52px -52px 0;">
+      <div class="win-icon">🏆</div>
+      <div>
+        <div class="win-label">Firm Win</div>
+        <div class="win-text">
+          Stambaugh Ness Named 2026 "Firm to Watch" and "Top Mid-Atlantic Firm" by Accounting Today
+          <a href="https://www.stambaughness.com/news/accounting-today-top-firms-2026/" target="_blank"
+             style="display:inline-block;margin-left:10px;padding:6px 12px;background-color:#232c60;color:#ffffff;text-decoration:none;font-size:12px;border-radius:3px;font-weight:600;">
+             Read Article
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- ZWEIG STRATEGIC PARTNERSHIP -->
+<section id="zweig">
+  <div class="sec-head">
+    <span class="sec-label">Strategic Partnership</span>
+    <div class="sec-line"></div>
+    <div class="sec-pip"></div>
+  </div>
+
+  <div class="funfact" style="align-items:flex-start;">
+    <div class="funfact-logo">
+      <div style="width:90px;height:90px;border-radius:8px;border:3px solid var(--gold);overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
+        <img src="https://www.stambaughness.com/wp-content/uploads/2025/04/Jeremy-Clarke-2025-square_.png" alt="Zweig Group" style="width:100%;height:100%;object-fit:contain;padding:4px;"/>
+      </div>
+    </div>
+
+    <div class="funfact-body">
+      <div class="funfact-label">Zweig Group · Strategic Partnership</div>
+      <div class="funfact-name">SN + Zweig Group: A Good Crop, One Year In</div>
+
+      <div class="funfact-text" style="font-size:14px; line-height:1.75; color:#243746;">
+        <p style="margin:0 0 16px 0;">
+          I grew up on a quintessential 120-acre corn farm in Iowa. My dad (whom I probably admired more than anyone on the planet) used to say at every harvest, without fail: “You can’t fake a good crop.” What he meant by that was simple: real results show. You don’t get them from talk, optics, or shortcuts. You get them from hard, consistent work, cultivation, care, and time. If all that’s working, people can see it. If it’s not, they can see that too.
+        </p>
+
+        <p style="margin:0 0 16px 0;">
+          I’m drawing upon that analogy to call this SN + ZG partnership what it is, one year in: a good crop, built on real effort, real care, and real collaboration.
+        </p>
+
+        <p style="margin:0 0 16px 0;">
+          Over the past 12 months, our two firms have done more than just “partner.” We’ve worked side by side across marketing, advisory, events, data, and the behind-the-scenes operational lift that makes it all actually work and gel. And it’s showing up in results the industry can’t help but see. What we’re building together is truly inspiring: a new standard for what clients should expect, and a combination AEC hasn’t seen before. The buzz isn’t subtle anymore. It’s building, it’s real, and it’s exciting. A shared vision to elevate the industry.
+        </p>
+
+        <p style="margin:0 0 16px 0;">
+          So… yeah… like Dad said, you can’t fake this.
+        </p>
+
+        <p style="margin:0 0 16px 0;">
+          On behalf of all my colleagues at Zweig Group, a sincere thank you to the SN team for the way you’ve embraced us. You didn’t just make space, you made us feel genuinely welcomed. That’s a big reason this has worked as well as it has. Thanks to everyone, ZG-ers and SN-ers alike, for the work, the attitude, and the shared commitment to doing this the right way. It shows.
+        </p>
+
+        <p style="margin:0 0 16px 0;">
+          Here’s to a very bright future. We’re not just claiming success, we’re demonstrating it.
+        </p>
+
+        <p style="margin:0; font-weight:700; color:var(--green);">
+          #BetterTogether
+        </p>
+
+        <p style="margin:10px 0 0 0; font-weight:700;">
+          Jeremy
+        </p>
+      </div>
+
+      <a href="https://zweiggroup.com" target="_blank" style="display:inline-block;margin-top:18px;padding:8px 16px;background:var(--green);color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- PRACTICE AREA SPOTLIGHT -->
+    <section id="spotlight">
+      <div class="spotlight">
+        <div style="display:flex;align-items:center;gap:16px;margin:0 0 28px 0;">
+          <span class="sec-label" style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;">Practice Area Spotlight</span>
+          <div style="flex:1;height:2px;background:rgba(255,255,255,0.15);"></div>
+          <div style="width:28px;height:4px;background:#FFB81C;border-radius:2px;flex-shrink:0;"></div>
+          <img src="https://www.stambaughness.com/wp-content/uploads/2024/03/Marla-Miller-2024-500x500-1.jpg.webp" alt="Practice Area Photo" style="width:72px;height:72px;object-fit:cover;border-radius:4px;border:2px solid #FFB81C;flex-shrink:0;" onerror="this.style.display='none'"/>
+        </div>
+        <div class="spotlight-name">Tax Solutions · STA · State Advisory</div>
+        <div class="spotlight-hed">Running on Deadlines, Determination, and Questionable Amounts of Caffeine</div>
+        <div class="spotlight-body">April doesn't arrive — it hits. And for our Tax team, busy season is less a time of year and more a full-body experience. Since December, they've been operating at a pace that suggests sleep is optional and coffee is a core system dependency.</div>
+
+        <ul style="margin:16px 0;padding:0;list-style:none;">
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>Reassigned and stabilized a large client portfolio</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>Onboarded new clients and three new team members right before the surge</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>Launched Resource Planner and rolled out new processes and tools — mid-flight</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>Built a centralized hub for book and tax depreciation</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>Continued pushing automation and standardization — because doing things the easy way is apparently the goal… eventually</li>
+        </ul>
+
+        <div class="spotlight-body" style="margin-bottom:12px;">The volume is real. But what's more impressive is how it's getting done: quick pivots, constant collaboration, and a shared understanding that "I've got it" might actually mean "we've got it."</div>
+        <div class="spotlight-body" style="color:rgba(255,255,255,0.5);font-style:italic;">They're not at the finish line yet — but momentum is strong, spirits are (mostly) intact, and the work keeps moving. For now, it's one deadline at a time. But somewhere out there: vacations, gardens, boats, pools… and a vague memory of what weekends used to feel like.</div>
+      </div>
+    </section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+<!-- EMPLOYEE RECOGNITION -->
+    <section id="recognition">
+      <div class="rec-wrap">
+        <div class="sec-head" style="margin-top:0">
+          <span class="sec-label" style="color:var(--text-light)">Employee Recognition</span>
+          <div class="sec-line"></div>
+          <div class="sec-pip"></div>
+        </div>
+        <div style="text-align:center;padding:48px 24px;border:2px dashed var(--mid-gray);border-radius:4px;background:var(--white);">
+          <div style="font-size:36px;margin-bottom:16px;">🏅</div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:700;color:var(--green);letter-spacing:-0.01em;margin-bottom:8px;">Coming Soon</div>
+          <div style="width:48px;height:4px;background:var(--gold);border-radius:2px;margin:0 auto 16px;"></div>
+          <p style="font-size:14px;color:var(--text-mid);line-height:1.7;max-width:480px;margin:0 auto;">Employee recognition launches with our next issue. Stay tuned!</p>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+ 
+    <!-- SNAPSHOT -->
+<section id="photo">
+  <div class="sec-head">
+    <span class="sec-label">Snapshot</span>
+    <div class="sec-line"></div>
+    <div class="sec-pip"></div>
+  </div>
+
+  <div class="photo-moment">
+    
+    <!-- REPLACE THIS BLOCK WITH YOUR IMAGE -->
+    <img 
+      src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Team%20Picture.jpg?raw=true" 
+      alt="Leadership Team Meeting in Dallas"
+      style="width:100%; max-height:360px; object-fit:cover; border-radius:6px; display:block;"
+    />
+
+    <div class="photo-caption">
+      SN + ZN Leadership Team at 2026 Leadership Conference in Dallas, TX
+    </div>
+
+  </div>
+</section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+      <div class="sec-head">
+        <span class="sec-label">Resources &amp; Links</span>
+        <div class="sec-line"></div>
+        <div class="sec-pip"></div>
+      </div>
+      <ul class="res-list">
+        <li class="res-item"><div><div class="res-tag">Tool / Platform</div><div class="res-title">Skills & Performance Institute <span class="en">SPI</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Access →</a></li>
+        <li class="res-item"><div><div class="res-tag">Policy / Document</div><div class="res-title">SN AI Policy <span class="en">AI</span></div></div><a href="https://sn.sharepoint.com/:b:/s/SNAIInsights/IQCb5oF3lv6TQ46MwdADgWpIAYMvNFG2-NX9Eyc535rVM5M?e=dgm2Ck" class="res-cta">View →</a></li>
+        <li class="res-item"><div><div class="res-tag">Learning</div><div class="res-title">Active Listening: The #1 Powerskill <span class="en">Live ILT</span></div></div><a href="https://spi.stambaughness.com/learn/courses/844/active-listening-the-1-power-skill" class="res-cta">Enroll →</a></li>
+        <li class="res-item"><div><div class="res-tag">Article / Podcast</div><div class="res-title">The Power of Mattering <span class="en">Zach Mercurio</span></div></div><a href="https://www.youtube.com/watch?v=WSjdcc3rvTw" class="res-cta">Watch/Listen →</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-wm">Stambaugh <span>Ness</span></div>
+      <div class="footer-sub">Skills &amp; Performance Institute &nbsp;·&nbsp; People Development</div>
+    </div>
+    <nav class="footer-links">
+      <a href="https://forms.cloud.microsoft/r/Gsfz1RLMWe">Newsletter Idea Submissions</a>
+      <a href="https://sn.sharepoint.com/sites/sn-central/SitePages/Home.aspx">SN Central</a>
+      <a href="https://spi.stambaughness.com/">SPI LMS</a>
+      <a href="https://sn.sharepoint.com/sites/SNEmployeeLounge">HR Lounge</a>
+    </nav>
+  </footer>
+  <div class="footer-bottom">
+    &copy; 2026 Stambaugh Ness &nbsp;&middot;&nbsp; Internal Use Only &nbsp;&middot;&nbsp; Skills &amp; Performance Institute
+  </div>
+</div>
+</body>
+</html>
