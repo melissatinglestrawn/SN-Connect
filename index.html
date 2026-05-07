@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SN Pulse — May 2026</title>
+  <title>SN Pulse · May 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -38,15 +38,14 @@
     .nav a { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 11px 18px 11px 0; white-space: nowrap; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
     .nav a:hover { color: var(--green); border-bottom-color: var(--gold); }
     .nav a + a { padding-left: 18px; border-left: 1px solid var(--rule); }
-
-    /* ARCHIVE CALLOUT */
-    .archive-strip { display: flex; justify-content: flex-end; padding: 18px 52px 0; background: var(--white); }
-    .archive-card { display: inline-flex; align-items: center; gap: 12px; padding: 11px 16px 11px 14px; background: var(--gold-pale); border-left: 3px solid var(--gold); border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-radius: 2px; text-decoration: none; max-width: 340px; transition: background 0.15s, transform 0.15s; }
-    .archive-card:hover { background: #FFF6DC; transform: translateY(-1px); }
-    .archive-icon { font-size: 20px; line-height: 1; flex-shrink: 0; }
-    .archive-label { font-size: 9px; font-weight: 700; letter-spacing: 0.20em; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
-    .archive-link-text { font-size: 12.5px; font-weight: 700; color: var(--charcoal); line-height: 1.25; }
-
+    .archive-callout { display:flex; justify-content:flex-end; padding:16px 52px 0; background:var(--white); }
+    .archive-card { display:flex; align-items:center; gap:14px; background:var(--off-white); border:1px solid var(--rule); border-left:3px solid var(--gold); padding:11px 18px; max-width:360px; text-decoration:none; transition:background 0.15s, transform 0.15s; }
+    .archive-card:hover { background:#fff; transform:translateY(-1px); box-shadow:0 4px 14px rgba(0,83,76,0.08); }
+    .archive-icon { font-size:22px; line-height:1; flex-shrink:0; }
+    .archive-meta { flex:1; min-width:0; }
+    .archive-eyebrow { font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-light); margin-bottom:2px; }
+    .archive-title { font-size:13px; font-weight:700; color:var(--charcoal); line-height:1.3; }
+    .archive-cta { font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--green); white-space:nowrap; }
     .content { padding: 0 52px; }
     .sec-head { display: flex; align-items: center; gap: 16px; margin: 52px 0 28px; }
     .sec-label { font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); white-space: nowrap; }
@@ -69,25 +68,14 @@
     .cta-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--green); text-decoration: none; padding: 9px 18px; transition: background 0.15s; }
     .cta-link:hover { background: var(--green-dark); }
     .cta-link::after { content: '→'; font-size: 12px; }
+    .course-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px; }
+    .course-card { background:var(--off-white); border:1px solid var(--rule); border-left:3px solid var(--teal); padding:16px 18px; }
+    .course-tag { font-size:8.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); margin-bottom:6px; }
+    .course-title { font-size:13.5px; font-weight:700; color:var(--text); margin-bottom:5px; line-height:1.3; }
+    .course-desc { font-size:12px; color:var(--text-mid); line-height:1.55; }
     .rule-gold { display: flex; align-items: center; gap: 0; margin: 52px 0; }
     .rule-gold::before, .rule-gold::after { content: ''; flex: 1; height: 2px; background: var(--mid-gray); }
     .rule-gold-center { width: 56px; height: 5px; background: var(--gold); margin: 0 16px; border-radius: 3px; }
-
-    /* AEC AWARDS BLOCK */
-    .awards-block { background: var(--green); margin: 0 -52px; padding: 40px 52px; position: relative; overflow: hidden; color: var(--white); }
-    .awards-block::before { content: '🏆'; position: absolute; top: -20px; right: 30px; font-size: 200px; opacity: 0.06; pointer-events: none; user-select: none; }
-    .awards-tag { display: inline-block; background: var(--gold); color: var(--charcoal); font-size: 9px; font-weight: 800; letter-spacing: 0.20em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; margin-bottom: 16px; }
-    .awards-hed { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 12px; letter-spacing: -0.01em; max-width: 720px; }
-    .awards-hed em { font-style: italic; color: var(--gold); }
-    .awards-body { font-size: 14.5px; line-height: 1.75; color: rgba(255,255,255,0.85); margin-bottom: 22px; max-width: 720px; }
-    .awards-deadline-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; position: relative; z-index: 1; }
-    .awards-deadline { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; background: rgba(255,184,28,0.12); border: 1px solid rgba(255,184,28,0.35); border-radius: 2px; }
-    .awards-deadline-label { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
-    .awards-deadline-date { font-size: 14px; font-weight: 800; color: var(--white); }
-    .awards-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--gold); color: var(--charcoal); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.15s, transform 0.15s; }
-    .awards-cta:hover { background: #FFC93C; transform: translateY(-1px); }
-    .awards-cta::after { content: '→'; font-size: 14px; }
-
     .events-intro { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px; padding: 16px 20px; background: var(--off-white); border-left: 3px solid var(--green); }
     .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .event-card { background: var(--white); border: 1px solid var(--rule); border-bottom: 3px solid var(--green); padding: 20px; transition: box-shadow 0.15s, transform 0.15s; overflow: hidden; }
@@ -102,6 +90,33 @@
     .win-icon { font-size: 32px; flex-shrink: 0; }
     .win-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
     .win-text { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    .aec-awards { background: var(--gold); margin: 28px -52px 0; padding: 36px 52px 32px; position: relative; overflow: hidden; }
+    .aec-awards::before { content:'⭐'; position:absolute; top:-30px; right:32px; font-size:200px; opacity:0.08; pointer-events:none; user-select:none; line-height:1; }
+    .aec-eyebrow { font-size:10px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(0,0,0,0.6); margin-bottom:10px; position:relative; z-index:1; }
+    .aec-title { font-family:'Cormorant Garamond', Georgia, serif; font-size:34px; font-weight:700; color:#1E1E1C; line-height:1.1; letter-spacing:-0.01em; margin-bottom:6px; position:relative; z-index:1; }
+    .aec-title em { font-style:italic; color:#003d38; }
+    .aec-subtitle { font-size:13px; font-weight:800; letter-spacing:0.06em; color:rgba(0,0,0,0.72); text-transform:uppercase; margin-bottom:14px; position:relative; z-index:1; }
+    .aec-credit { font-size:11.5px; font-style:italic; color:rgba(0,0,0,0.62); margin-bottom:22px; position:relative; z-index:1; max-width:760px; }
+    .aec-credit a { color:#003d38; font-weight:700; font-style:normal; text-decoration:none; border-bottom:1px solid rgba(0,61,56,0.4); transition:border-color 0.15s; }
+    .aec-credit a:hover { border-bottom-color:#003d38; }
+    .aec-desc { font-size:13.5px; color:rgba(0,0,0,0.78); line-height:1.7; max-width:760px; margin-bottom:20px; position:relative; z-index:1; }
+    .aec-desc b { color:#1E1E1C; }
+    .aec-desc + .aec-desc { margin-top:-4px; }
+    .aec-categories { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:0 0 22px; max-width:760px; position:relative; z-index:1; }
+    .aec-cat-card { background:rgba(255,255,255,0.55); border:1px solid rgba(0,0,0,0.10); border-top:3px solid #1E1E1C; padding:16px 12px; border-radius:2px; text-align:center; }
+    .aec-cat-label { font-size:10px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#003d38; margin-bottom:7px; }
+    .aec-cat-detail { font-size:12.5px; font-weight:700; color:#1E1E1C; line-height:1.4; }
+    .aec-bottom-row { display:flex; align-items:center; gap:18px; flex-wrap:wrap; position:relative; z-index:1; }
+    .aec-deadline { display:inline-flex; flex-direction:column; padding:9px 16px; background:rgba(0,0,0,0.08); border-left:3px solid #1E1E1C; border-radius:2px; }
+    .aec-deadline-label { font-size:9px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:rgba(0,0,0,0.7); }
+    .aec-deadline-date { font-size:14px; font-weight:800; color:#1E1E1C; }
+    .aec-cta { display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); background:#1E1E1C; text-decoration:none; padding:13px 22px; flex-shrink:0; white-space:nowrap; transition:background 0.15s, transform 0.15s; }
+    .aec-cta:hover { background:#000; transform:translateY(-1px); }
+    .aec-save-date { margin-top:20px; padding-top:16px; border-top:1px solid rgba(0,0,0,0.15); font-size:12px; color:rgba(0,0,0,0.7); position:relative; z-index:1; }
+    .aec-save-date-label { font-size:9px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:#003d38; margin-right:8px; }
+    .aec-save-date-link { color:#1E1E1C; font-weight:800; text-decoration:none; border-bottom:1px solid #003d38; transition:color 0.15s; }
+    .aec-save-date-link:hover { color:#003d38; }
+    .aec-save-date-detail { color:rgba(0,0,0,0.6); }
     .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; overflow: hidden; box-sizing: border-box; }
     .funfact-logo { flex-shrink: 0; }
     .funfact-body { flex: 1; min-width: 0; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
@@ -149,25 +164,18 @@
     .footer-links a:hover { color: var(--gold); }
     .footer-bottom { background: var(--green-dark); padding: 11px 52px; text-align: center; font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 0.07em; }
     .en { display: inline-block; background: #fffde7; border: 1px dashed var(--gold); border-radius: 2px; padding: 0 5px; font-size: 9.5px; font-style: normal; color: #7a5a00; margin-left: 4px; font-weight: 700; vertical-align: middle; }
-
-    /* HEALTH & WELLNESS COURSE LIST */
-    .wellness-list { list-style: none; margin-top: 14px; }
-    .wellness-list li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13.5px; color: var(--text-mid); line-height: 1.55; }
-    .wellness-list li:last-child { border-bottom: none; }
-    .wellness-list li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
-    .wellness-list b { color: var(--text); font-weight: 700; }
-
     @media (max-width: 580px) {
-      .masthead, .content, .leadership, .rec-wrap, .spotlight, .footer, .footer-bottom, .nav, .archive-strip, .awards-block { padding-left: 24px; padding-right: 24px; }
-      .leadership, .rec-wrap, .spotlight, .awards-block { margin: 0 -24px; }
+      .masthead, .content, .leadership, .rec-wrap, .spotlight, .footer, .footer-bottom, .nav, .archive-callout, .aec-awards { padding-left: 24px; padding-right: 24px; }
+      .leadership, .rec-wrap, .spotlight, .aec-awards { margin: 0 -24px; }
       .funfact { flex-direction: column; gap: 12px; }
-      .win-callout { flex-direction: column; gap: 10px; }
-      .events-grid, .rec-grid { grid-template-columns: 1fr; }
+      .win-callout { flex-direction: column; gap: 14px; align-items: flex-start; }
+      .events-grid, .rec-grid, .course-grid, .aec-categories { grid-template-columns: 1fr; }
+      .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
       .masthead { flex-direction: column; align-items: flex-start; }
       .masthead-right { text-align: left; }
       .footer { flex-direction: column; }
-      .archive-strip { justify-content: flex-start; }
-      .awards-hed { font-size: 24px; }
+      .archive-callout { justify-content: flex-start; }
+      .archive-card { max-width: 100%; }
     }
   </style>
 </head>
@@ -191,21 +199,22 @@
   <nav class="nav">
     <a href="#leadership">Leadership</a>
     <a href="#feature">Feature</a>
-    <a href="#awards">Awards</a>
     <a href="#events">Live Events</a>
+    <a href="#aec-awards">AEC Awards</a>
     <a href="#zweig">Partnership</a>
     <a href="#spotlight">Spotlight</a>
     <a href="#resources">Resources</a>
   </nav>
 
   <!-- ARCHIVE CALLOUT -->
-  <div class="archive-strip">
-    <a href="https://stambaughness.github.io/SN-Pulse/archive/2026-04/" class="archive-card">
-      <div class="archive-icon">📰</div>
-      <div>
-        <div class="archive-label">From the Archive</div>
-        <div class="archive-link-text">Read the April 2026 Issue →</div>
+  <div class="archive-callout">
+    <a href="https://stambaughness.github.io/SN-Pulse/archive/2026-04/" class="archive-card" target="_blank" rel="noopener">
+      <span class="archive-icon">📰</span>
+      <div class="archive-meta">
+        <div class="archive-eyebrow">From the Archive</div>
+        <div class="archive-title">Read the April 2026 issue</div>
       </div>
+      <span class="archive-cta">Read →</span>
     </a>
   </div>
 
@@ -220,13 +229,15 @@
           <div class="sec-pip"></div>
         </div>
         <blockquote class="leadership-quote">
-          "Being named to Forbes' 2026 Best-In-State CPAs list is an honor, but it's not mine alone — it belongs to every person at Stambaugh Ness who brings their best to our clients and to one another. What sets this firm apart isn't a single accolade; it's how we show up, day in and day out, in an industry that demands excellence and rewards consistency. As we move into May — Mental Health Awareness Month — I want to underscore something important: how we work matters as much as what we accomplish. Sustainable performance starts with sustainable people. Take care of yourselves, and take care of each other. That's how we keep building."
+          "Mental health and wellness aren't just personal priorities, they are business priorities. When our people are supported, they think clearer, collaborate better, and lead stronger. May is a reminder that investing in well-being is investing in performance. We all show up better for our teams, our clients, and our families when we take care of our mental health. This is a time to slow down, check in, and make space for what matters most."
         </blockquote>
         <div class="attrib">
-          <img src="https://www.stambaughness.com/wp-content/uploads/2024/11/Steve-Hake-2024-square.png" alt="Steven L. Hake" style="width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;" onerror="this.style.display='none'"/>
+          <div style="width:42px;height:42px;border-radius:50%;background:var(--gold);padding:2px;flex-shrink:0;box-sizing:border-box;">
+            <img src="https://www.stambaughness.com/wp-content/uploads/2026/01/Jason-Jaworski-2026-500.webp" alt="Jason Jaworski" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;"/>
+          </div>
           <div>
-            <div class="attrib-name">Steven L. Hake, CPA</div>
-            <div class="attrib-title">President &amp; CEO, Stambaugh Ness &nbsp;·&nbsp; 2026 Forbes Best-In-State CPA</div>
+            <div class="attrib-name">Jason Jaworski</div>
+            <div class="attrib-title">Chief Operating Officer, Stambaugh Ness</div>
           </div>
         </div>
       </div>
@@ -240,58 +251,59 @@
         <div class="sec-pip"></div>
       </div>
 
-      <div class="feature-kicker">Health &amp; Wellness · Firm-Wide</div>
-      <h2 class="feature-hed">Whole-Person Wellness, Built Into the Way We Work</h2>
-      <p class="feature-dek"><em>May is Mental Health Awareness Month — and the launch point for a broader, year-round commitment to whole-person health at Stambaugh Ness.</em></p>
+      <div class="feature-kicker">Skills &amp; Performance Institute · Health &amp; Wellness</div>
+      <h2 class="feature-hed">Performance Has a Pulse: Health &amp; Wellness, Now in SPI</h2>
+      <p class="feature-dek"><em>This month, the Skills &amp; Performance Institute is launching a dedicated Health &amp; Wellness catalog — practical, on-demand learning for the way we actually work.</em></p>
 
       <div class="feature-body">
-        <p>At SN, wellness isn't a perk — it's part of how we deliver excellent work and sustainable careers. This month, we're spotlighting the resources, training, and benefits already in place to support the whole person, and previewing what's coming next.</p>
+        <p><b>You can't out-perform burnout.</b> The most accomplished people in our firm aren't the ones who push hardest — they're the ones who recover smartest, focus better, and bring sustained energy to the work. May marks the launch of SPI's <b>Health &amp; Wellness catalog</b>, a curated set of courses built specifically for high-performing professionals in demanding roles.</p>
 
-        <p>The <b>Skills &amp; Performance Institute</b> is launching a curated <b>Health &amp; Wellness learning track</b> with new courses available throughout May:</p>
+        <p>These aren't generic wellness videos. They're short, practical, and built to fit between meetings — covering the full spectrum from cognitive performance and stress management to movement, sleep, and resilience.</p>
 
-        <ul class="wellness-list">
-          <li><span><b>Stress Management &amp; Resilience for Professionals</b> — practical strategies for the demands of client service.</span></li>
-          <li><span><b>Mindful Productivity: Working Without Burning Out</b> — focus, energy, and pace as a long-term practice.</span></li>
-          <li><span><b>Mental Health First Aid for Managers</b> — recognize the signs, open the door, and connect people to support.</span></li>
-          <li><span><b>Sleep, Recovery, and Sustained Performance</b> — the science of doing your best work over the long haul.</span></li>
-          <li><span><b>Healthy Boundaries in Client Service</b> — protecting your time, your team, and the work itself.</span></li>
-        </ul>
+        <p><b>A few of the courses available now:</b></p>
 
-        <p style="margin-top:18px;">These courses sit alongside our existing benefits ecosystem — including EAP support, mental health coverage through our health plan, and flexible work arrangements designed to protect both performance and personal wellbeing.</p>
-
-        <p><b>Managers:</b> the <i>Mental Health First Aid for Managers</i> session is required viewing this quarter. It's short, it's practical, and it changes the conversation.</p>
-
-        <p style="font-style:italic; color:var(--green); font-weight:600;">Wellness is firm strategy. When our people are well, our work is better — and so is everything around it.</p>
-      </div>
-
-      <a href="https://spi.stambaughness.com" class="cta-link">Explore the Wellness Track in SPI</a>
-    </section>
-
-    <div class="rule-gold"><div class="rule-gold-center"></div></div>
-
-    <!-- AEC FINANCIAL LEADERSHIP AWARDS -->
-    <section id="awards">
-      <div class="awards-block">
-        <span class="awards-tag">Now Accepting Nominations</span>
-        <h2 class="awards-hed">Introducing the <em>AEC Financial Leadership Awards</em></h2>
-        <p class="awards-body">
-          Stambaugh Ness is proud to launch a new industry-wide recognition program: the AEC Financial Leadership Awards. This is our chance to celebrate the people whose financial leadership is shaping the future of the Architecture, Engineering, and Construction industry — the strategists, the operators, and the builders behind the numbers.
-          <br/><br/>
-          Know someone (inside or outside SN) whose work deserves recognition? Nominate them. Are you that person? Self-nominations are welcome and encouraged.
-        </p>
-        <div class="awards-deadline-row">
-          <div class="awards-deadline">
-            <span class="awards-deadline-label">Submissions Close</span>
-            <span class="awards-deadline-date">June 12, 2026</span>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-tag">Energy &amp; Focus</div>
+            <div class="course-title">The Performance Pulse: Energy Management for High Performers</div>
+            <div class="course-desc">Why managing energy beats managing time — and the daily rhythms that protect your best work.</div>
           </div>
-          <a href="https://tally.so/r/VLZpgg" target="_blank" class="awards-cta">Submit a Nomination</a>
+          <div class="course-card">
+            <div class="course-tag">Resilience</div>
+            <div class="course-title">Resilience Reset: Tools for Bouncing Back</div>
+            <div class="course-desc">Practical frameworks for navigating setbacks, change, and high-pressure stretches without losing yourself in the process.</div>
+          </div>
+          <div class="course-card">
+            <div class="course-tag">Mental Health</div>
+            <div class="course-title">Mindfulness in 5: Practical Calm at Work</div>
+            <div class="course-desc">Five-minute reset practices you can use between client calls, before a tough conversation, or anytime the day gets loud.</div>
+          </div>
+          <div class="course-card">
+            <div class="course-tag">Burnout Prevention</div>
+            <div class="course-title">Recognizing Burnout — Before It Costs You</div>
+            <div class="course-desc">The early-warning signs most professionals miss, and what to do before exhaustion turns into a bigger problem.</div>
+          </div>
+          <div class="course-card">
+            <div class="course-tag">Sleep &amp; Recovery</div>
+            <div class="course-title">Better Sleep, Better Work</div>
+            <div class="course-desc">The non-negotiables of recovery — and why sleep is the most underrated cognitive performance tool you have.</div>
+          </div>
+          <div class="course-card">
+            <div class="course-tag">Movement</div>
+            <div class="course-title">Movement at the Desk: 10-Minute Energy Boosts</div>
+            <div class="course-desc">Quick routines to break up long sitting, ease tension, and reset your focus without leaving your workspace.</div>
+          </div>
         </div>
+
+        <p style="margin-top:20px;">More H&amp;W courses will continue dropping throughout the year. If there's a topic you'd like to see, submit a suggestion through the Newsletter Idea form in the footer.</p>
       </div>
+
+      <a href="https://spi.stambaughness.com" class="cta-link">Explore in SPI</a>
     </section>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
-    <!-- EVENTS & TRAINING (UNCHANGED FROM APRIL) -->
+    <!-- EVENTS & TRAINING -->
     <section id="events">
       <div class="sec-head">
         <span class="sec-label">Upcoming Live Events &amp; Training</span>
@@ -336,20 +348,73 @@
       </div>
     </section>
 
-    <!-- FIRM WIN CALLOUT (UPDATED FOR MAY) -->
+    <!-- FIRM WIN CALLOUT -->
     <div class="win-callout" style="margin:52px -52px 0;">
       <div class="win-icon">🏆</div>
       <div>
         <div class="win-label">Firm Win</div>
         <div class="win-text">
-          Steve Hake Named to Forbes' 2026 Best-In-State CPAs List for AEC Industry Leadership
+          Steven L. Hake, CPA, President &amp; CEO, named to the 2026 Forbes Best-In-State CPAs list — recognized for his leadership in the AEC industry.
           <a href="https://www.linkedin.com/posts/forbesbestcpas-aecleadership-stambaughness-share-7454691690189258752-F_n2" target="_blank"
              style="display:inline-block;margin-left:10px;padding:6px 12px;background-color:#232c60;color:#ffffff;text-decoration:none;font-size:12px;border-radius:3px;font-weight:600;">
-             Read More
+             View on LinkedIn
           </a>
         </div>
       </div>
     </div>
+
+    <!-- AEC FINANCIAL LEADERSHIP AWARDS — THE FINNIES -->
+    <section id="aec-awards" class="aec-awards">
+      <div class="aec-eyebrow">Now Accepting Nominations</div>
+      <div class="aec-title">Introducing <em>the Finnies</em></div>
+      <div class="aec-subtitle">The AEC Financial Leadership Awards</div>
+      <div class="aec-credit">
+        Powered by <a href="https://stambaughness.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Stambaugh Ness</a> &nbsp;·&nbsp; Presented in partnership with <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Zweig Group</a>
+      </div>
+
+      <p class="aec-desc">
+        The Finnies recognize exceptional finance professionals in the AEC industry who demonstrate strategic leadership, sound financial stewardship, and a measurable impact on their firm's performance and long-term success. This award honors <b>CFOs, Finance Directors, Controllers, and other financial leaders</b> who go beyond day-to-day financial management to serve as trusted advisors, growth partners, and leaders within their organizations.
+      </p>
+
+      <p class="aec-desc">
+        Up to three Finnies will be awarded — one in each firm-size category:
+      </p>
+
+      <div class="aec-categories">
+        <div class="aec-cat-card">
+          <div class="aec-cat-label">Small Firm</div>
+          <div class="aec-cat-detail">Under $10M<br/>annual revenue</div>
+        </div>
+        <div class="aec-cat-card">
+          <div class="aec-cat-label">Mid-Sized Firm</div>
+          <div class="aec-cat-detail">$10M – $50M<br/>annual revenue</div>
+        </div>
+        <div class="aec-cat-card">
+          <div class="aec-cat-label">Large Firm</div>
+          <div class="aec-cat-detail">Over $50M<br/>annual revenue</div>
+        </div>
+      </div>
+
+      <p class="aec-desc">
+        Recipients exemplify excellence in <b>financial strategy, risk management, operational insight,</b> and <b>collaboration</b> — leaders helping their firms navigate change, drive value, and position themselves for a strong future.
+      </p>
+
+      <div class="aec-bottom-row">
+        <div class="aec-deadline">
+          <span class="aec-deadline-label">Nominations Due</span>
+          <span class="aec-deadline-date">June 12, 2026</span>
+        </div>
+        <a href="https://tally.so/r/VLZpgg" target="_blank" rel="noopener" class="aec-cta">
+          Submit a Nomination →
+        </a>
+      </div>
+
+      <div class="aec-save-date">
+        <span class="aec-save-date-label">Winners Presented At</span>
+        <a href="https://zweiggroup.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" class="aec-save-date-link">ElevateAEC Conference</a>
+        <span class="aec-save-date-detail">&nbsp;·&nbsp; September 29 – October 1, 2026 &nbsp;·&nbsp; Park City, Utah</span>
+      </div>
+    </section>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
@@ -364,29 +429,26 @@
       <div class="funfact" style="align-items:flex-start;">
         <div class="funfact-logo">
           <div style="width:90px;height:90px;border-radius:8px;border:3px solid var(--gold);overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
-            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:700;color:var(--green);text-align:center;line-height:1;">ZG<br/><span style="font-size:11px;color:var(--text-light);font-style:italic;">+ SN</span></div>
+            <img src="https://www.stambaughness.com/wp-content/uploads/2025/04/Jeremy-Clarke-2025-square_.png" alt="Zweig Group" style="width:100%;height:100%;object-fit:contain;padding:4px;"/>
           </div>
         </div>
 
         <div class="funfact-body">
           <div class="funfact-label">Zweig Group · Integration Update</div>
-          <div class="funfact-name">[PLACEHOLDER] May Partnership Update</div>
+          <div class="funfact-name">The Road to August: What's Coming Next</div>
 
           <div class="funfact-text" style="font-size:14px; line-height:1.75; color:#243746;">
             <p style="margin:0 0 16px 0;">
-              <b>[Editor's note for Melissa: drop in May Zweig content here. Per planning docs, a Q&amp;A with the Zweig COO is one format option being explored. Other options: integration milestone update, joint client win, cross-team profile.]</b>
+              <em>[PLACEHOLDER — replace with your May Zweig content. Suggested angle: a brief integration update from Jeremy or another ZG/SN leader covering progress between April's "good crop" letter and the August merger close. Could include a Q&amp;A teaser, joint event mention, or a milestone moment from the past 30 days.]</em>
             </p>
 
             <p style="margin:0 0 16px 0;">
-              With the August merger now just three months away, this section is prime real estate for bridging the two organizations. Suggested angles:
+              As we move closer to August, the SN + Zweig integration continues to gain momentum. Behind the scenes, teams from both firms are working through the operational, cultural, and strategic alignment that will make the combined organization stronger from day one. Over the coming weeks, expect more visibility into joint initiatives, shared priorities, and the people leading the work.
             </p>
 
-            <ul style="margin:0 0 16px 18px; padding:0;">
-              <li style="margin-bottom:6px;">Q&amp;A with Zweig COO on integration priorities</li>
-              <li style="margin-bottom:6px;">"What ZG-ers should know about SN" / "What SN-ers should know about ZG"</li>
-              <li style="margin-bottom:6px;">Integration timeline preview (what changes when)</li>
-              <li style="margin-bottom:6px;">Joint team or joint client spotlight</li>
-            </ul>
+            <p style="margin:0 0 16px 0;">
+              <em>[Optional teaser — e.g., "Coming next month: a Q&amp;A with Zweig Group COO on what the integration means for clients" or a mention of a joint event/initiative.]</em>
+            </p>
           </div>
 
           <a href="https://zweiggroup.com" target="_blank" style="display:inline-block;margin-top:18px;padding:8px 16px;background:var(--green);color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;">Learn More →</a>
@@ -403,62 +465,69 @@
           <span class="sec-label" style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;">Practice Area Spotlight</span>
           <div style="flex:1;height:2px;background:rgba(255,255,255,0.15);"></div>
           <div style="width:28px;height:4px;background:#FFB81C;border-radius:2px;flex-shrink:0;"></div>
+          <div style="width:72px;height:72px;border-radius:4px;border:2px solid #FFB81C;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);flex-shrink:0;">[Photo]</div>
         </div>
-        <div class="spotlight-name">[PLACEHOLDER] May Practice Area</div>
-        <div class="spotlight-hed">[Headline goes here]</div>
-        <div class="spotlight-body" style="margin-bottom:14px;">
-          <b>[Editor's note for Melissa:</b> Pick the May practice area. Given the Health &amp; Wellness theme, a strong fit is the <b>People &amp; Culture team</b> (the team driving the wellness initiatives Steve referenced). Other options that ladder up well: <b>HR Advisory</b>, or any practice area with a notable May milestone.<b>]</b>
-        </div>
-        <div class="spotlight-body">Replace this section with: opening paragraph framing the team's recent work, 4–6 bulleted highlights with gold arrows (matching April's Tax format), and a closing paragraph.</div>
+        <div class="spotlight-name">[Practice Area · Sub-team · Focus Area]</div>
+        <div class="spotlight-hed">[Headline that captures this team's May story]</div>
+        <div class="spotlight-body"><em>[PLACEHOLDER — replace with your chosen practice area for May. Given the H&amp;W theme, options to consider: People &amp; Culture team's wellness rollout, Tax team's post-busy-season recovery, or any practice area with a notable May moment. Same structure as April's Tax spotlight: 2–3 sentences setting the scene, a bullet list of recent wins, then a closing reflection.]</em></div>
+
+        <ul style="margin:16px 0;padding:0;list-style:none;">
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>[Win or accomplishment #1]</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>[Win or accomplishment #2]</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>[Win or accomplishment #3]</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#FFB81C;font-size:14px;flex-shrink:0;margin-top:2px;">→</span>[Win or accomplishment #4]</li>
+        </ul>
+
+        <div class="spotlight-body" style="margin-bottom:12px;">[Closing reflection — 1–2 sentences on what this team's work means for the firm.]</div>
+        <div class="spotlight-body" style="color:rgba(255,255,255,0.5);font-style:italic;">[Optional warm sign-off or look-ahead.]</div>
       </div>
     </section>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
-    <!-- EMPLOYEE RECOGNITION (LAUNCHED THIS ISSUE) -->
+    <!-- EMPLOYEE RECOGNITION -->
     <section id="recognition">
       <div class="rec-wrap">
         <div class="sec-head" style="margin-top:0">
-          <span class="sec-label" style="color:var(--text-light)">Employee Recognition</span>
+          <span class="sec-label">Employee Recognition</span>
           <div class="sec-line"></div>
           <div class="sec-pip"></div>
         </div>
-        <p class="rec-intro">Shoutouts from across the firm — peer-to-peer recognition for the people who showed up, stepped up, and made things better this month.</p>
+        <p class="rec-intro">A round of applause for the people going above and beyond this month — the quiet wins, the team lifts, the moments that make SN feel like SN. <em>[PLACEHOLDER — replace cards below with real shout-outs from your nomination form / leader submissions.]</em></p>
         <div class="rec-grid">
           <div class="rec-card">
-            <div class="rec-av">??</div>
+            <div class="rec-av">[X]</div>
             <div>
-              <div class="rec-name">[Recognized Employee Name]</div>
-              <div class="rec-role">[Team / Role]</div>
-              <div class="rec-note">"[Recognition note — what they did and the impact it had.]"</div>
+              <div class="rec-name">[Employee Name]</div>
+              <div class="rec-role">[Role · Practice Area]</div>
+              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
             </div>
           </div>
           <div class="rec-card">
-            <div class="rec-av">??</div>
+            <div class="rec-av">[X]</div>
             <div>
-              <div class="rec-name">[Recognized Employee Name]</div>
-              <div class="rec-role">[Team / Role]</div>
-              <div class="rec-note">"[Recognition note.]"</div>
+              <div class="rec-name">[Employee Name]</div>
+              <div class="rec-role">[Role · Practice Area]</div>
+              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
             </div>
           </div>
           <div class="rec-card">
-            <div class="rec-av">??</div>
+            <div class="rec-av">[X]</div>
             <div>
-              <div class="rec-name">[Recognized Employee Name]</div>
-              <div class="rec-role">[Team / Role]</div>
-              <div class="rec-note">"[Recognition note.]"</div>
+              <div class="rec-name">[Employee Name]</div>
+              <div class="rec-role">[Role · Practice Area]</div>
+              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
             </div>
           </div>
           <div class="rec-card">
-            <div class="rec-av">??</div>
+            <div class="rec-av">[X]</div>
             <div>
-              <div class="rec-name">[Recognized Employee Name]</div>
-              <div class="rec-role">[Team / Role]</div>
-              <div class="rec-note">"[Recognition note.]"</div>
+              <div class="rec-name">[Employee Name]</div>
+              <div class="rec-role">[Role · Practice Area]</div>
+              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
             </div>
           </div>
         </div>
-        <p style="text-align:center; margin-top:24px; font-size:13px; color:var(--text-mid);">Want to recognize a teammate? <a href="https://forms.cloud.microsoft/r/Gsfz1RLMWe" style="color:var(--green); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold);">Submit a shoutout for the next issue →</a></p>
       </div>
     </section>
 
@@ -473,13 +542,12 @@
       </div>
 
       <div class="photo-moment">
-        <img
-          src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Team%20Picture.jpg?raw=true"
-          alt="SN Team Moment"
-          style="width:100%; max-height:360px; object-fit:cover; border-radius:6px; display:block;"
-        />
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">📸</div>
+          <div class="photo-placeholder-text">[Replace with May Snapshot Image]</div>
+        </div>
         <div class="photo-caption">
-          [Update caption for May — or swap photo for a wellness/team moment from this month]
+          [Caption — e.g., a wellness event, team walk, May milestone, or an SN moment worth capturing.]
         </div>
       </div>
     </section>
@@ -494,12 +562,12 @@
         <div class="sec-pip"></div>
       </div>
       <ul class="res-list">
-        <li class="res-item"><div><div class="res-tag">Wellness Track · NEW</div><div class="res-title">Health &amp; Wellness Course Catalog <span class="en">SPI</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Browse →</a></li>
-        <li class="res-item"><div><div class="res-tag">Awards · Open Call</div><div class="res-title">AEC Financial Leadership Awards <span class="en">June 12</span></div></div><a href="https://tally.so/r/VLZpgg" class="res-cta">Nominate →</a></li>
-        <li class="res-item"><div><div class="res-tag">Benefit / Support</div><div class="res-title">Employee Assistance Program (EAP) <span class="en">Confidential</span></div></div><a href="#" class="res-cta">Access →</a></li>
+        <li class="res-item"><div><div class="res-tag">Health &amp; Wellness</div><div class="res-title">SPI Health &amp; Wellness Catalog <span class="en">New</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Browse →</a></li>
         <li class="res-item"><div><div class="res-tag">Tool / Platform</div><div class="res-title">Skills &amp; Performance Institute <span class="en">SPI</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Access →</a></li>
-        <li class="res-item"><div><div class="res-tag">Learning</div><div class="res-title">Coaching Conversations <span class="en">Live ILT · May</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Enroll →</a></li>
+        <li class="res-item"><div><div class="res-tag">Industry Initiative</div><div class="res-title">The Finnies — AEC Financial Leadership Awards <span class="en">Due June 12</span></div></div><a href="https://tally.so/r/VLZpgg" class="res-cta">Nominate →</a></li>
+        <li class="res-item"><div><div class="res-tag">Mental Health</div><div class="res-title">Employee Assistance Program (EAP) <span class="en">Confidential</span></div></div><a href="#" class="res-cta">Learn More →</a></li>
         <li class="res-item"><div><div class="res-tag">Article / Podcast</div><div class="res-title">The Power of Mattering <span class="en">Zach Mercurio</span></div></div><a href="https://www.youtube.com/watch?v=WSjdcc3rvTw" class="res-cta">Watch/Listen →</a></li>
+        <li class="res-item"><div><div class="res-tag">Policy / Document</div><div class="res-title">SN AI Policy <span class="en">AI</span></div></div><a href="https://sn.sharepoint.com/:b:/s/SNAIInsights/IQCb5oF3lv6TQ46MwdADgWpIAYMvNFG2-NX9Eyc535rVM5M?e=dgm2Ck" class="res-cta">View →</a></li>
       </ul>
     </section>
 
@@ -515,7 +583,6 @@
       <a href="https://sn.sharepoint.com/sites/sn-central/SitePages/Home.aspx">SN Central</a>
       <a href="https://spi.stambaughness.com/">SPI LMS</a>
       <a href="https://sn.sharepoint.com/sites/SNEmployeeLounge">HR Lounge</a>
-      <a href="https://stambaughness.github.io/SN-Pulse/archive/2026-04/">Past Issues</a>
     </nav>
   </footer>
   <div class="footer-bottom">
