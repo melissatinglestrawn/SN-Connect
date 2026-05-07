@@ -68,11 +68,15 @@
     .cta-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--green); text-decoration: none; padding: 9px 18px; transition: background 0.15s; }
     .cta-link:hover { background: var(--green-dark); }
     .cta-link::after { content: '→'; font-size: 12px; }
-    .course-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px; }
-    .course-card { background:var(--off-white); border:1px solid var(--rule); border-left:3px solid var(--teal); padding:16px 18px; }
-    .course-tag { font-size:8.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); margin-bottom:6px; }
-    .course-title { font-size:13.5px; font-weight:700; color:var(--text); margin-bottom:5px; line-height:1.3; }
-    .course-desc { font-size:12px; color:var(--text-mid); line-height:1.55; }
+    .course-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:18px; }
+    .course-card { background:var(--off-white); border:1px solid var(--rule); border-left:3px solid var(--teal); padding:18px 18px 14px; text-decoration:none; color:inherit; display:block; position:relative; transition: box-shadow 0.15s, transform 0.15s, border-left-color 0.15s; }
+    .course-card:hover { box-shadow: 0 4px 16px rgba(0,118,129,0.12); transform: translateY(-2px); border-left-color: var(--green); }
+    .course-tag { font-size:8.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+    .course-title { font-size:13.5px; font-weight:700; color:var(--text); margin-bottom:6px; line-height:1.3; padding-right:42px; }
+    .course-desc { font-size:11.5px; color:var(--text-mid); line-height:1.55; margin-bottom:12px; }
+    .course-meta { font-size:9.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--green); display:flex; align-items:center; gap:7px; padding-top:10px; border-top:1px solid var(--rule); }
+    .course-meta::before { content:'▶'; font-size:8px; opacity:0.85; }
+    .course-badge-new { position:absolute; top:14px; right:14px; background:var(--gold); color:var(--charcoal); font-size:8.5px; font-weight:800; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; line-height:1; }
     .rule-gold { display: flex; align-items: center; gap: 0; margin: 52px 0; }
     .rule-gold::before, .rule-gold::after { content: ''; flex: 1; height: 2px; background: var(--mid-gray); }
     .rule-gold-center { width: 56px; height: 5px; background: var(--gold); margin: 0 16px; border-radius: 3px; }
@@ -287,36 +291,41 @@
         <p><b>A few of the courses available now:</b></p>
 
         <div class="course-grid">
-          <div class="course-card">
-            <div class="course-tag">Energy &amp; Focus</div>
-            <div class="course-title">The Performance Pulse: Energy Management for High Performers</div>
-            <div class="course-desc">Why managing energy beats managing time — and the daily rhythms that protect your best work.</div>
-          </div>
-          <div class="course-card">
-            <div class="course-tag">Resilience</div>
-            <div class="course-title">Resilience Reset: Tools for Bouncing Back</div>
-            <div class="course-desc">Practical frameworks for navigating setbacks, change, and high-pressure stretches without losing yourself in the process.</div>
-          </div>
-          <div class="course-card">
-            <div class="course-tag">Mental Health</div>
-            <div class="course-title">Mindfulness in 5: Practical Calm at Work</div>
-            <div class="course-desc">Five-minute reset practices you can use between client calls, before a tough conversation, or anytime the day gets loud.</div>
-          </div>
-          <div class="course-card">
+          <a href="https://spi.stambaughness.com/" target="_blank" rel="noopener" class="course-card">
+            <span class="course-badge-new">New</span>
             <div class="course-tag">Burnout Prevention</div>
-            <div class="course-title">Recognizing Burnout — Before It Costs You</div>
-            <div class="course-desc">The early-warning signs most professionals miss, and what to do before exhaustion turns into a bigger problem.</div>
-          </div>
-          <div class="course-card">
-            <div class="course-tag">Sleep &amp; Recovery</div>
-            <div class="course-title">Better Sleep, Better Work</div>
-            <div class="course-desc">The non-negotiables of recovery — and why sleep is the most underrated cognitive performance tool you have.</div>
-          </div>
-          <div class="course-card">
-            <div class="course-tag">Movement</div>
-            <div class="course-title">Movement at the Desk: 10-Minute Energy Boosts</div>
-            <div class="course-desc">Quick routines to break up long sitting, ease tension, and reset your focus without leaving your workspace.</div>
-          </div>
+            <div class="course-title">Beating Burnout: Spot the Symptoms and Take Action</div>
+            <div class="course-desc">Recognize the early warning signs of burnout — in yourself and on your team — and take practical steps to recover before it derails your work.</div>
+            <div class="course-meta">Free &middot; E-learning</div>
+          </a>
+          <a href="https://spi.stambaughness.com/" target="_blank" rel="noopener" class="course-card">
+            <span class="course-badge-new">New</span>
+            <div class="course-tag">Stress Management</div>
+            <div class="course-title">Dealing With Stress, Pressure, and Burnout</div>
+            <div class="course-desc">Strategies for navigating high-pressure stretches without losing your edge — or your wellbeing — along the way.</div>
+            <div class="course-meta">Free &middot; E-learning</div>
+          </a>
+          <a href="https://spi.stambaughness.com/" target="_blank" rel="noopener" class="course-card">
+            <span class="course-badge-new">New</span>
+            <div class="course-tag">Mental Health</div>
+            <div class="course-title">5-Day Challenge to Improve Your Mental Health</div>
+            <div class="course-desc">A short, structured five-day program with daily habits and small actions designed to build mental fitness over time.</div>
+            <div class="course-meta">Free &middot; E-learning</div>
+          </a>
+          <a href="https://spi.stambaughness.com/" target="_blank" rel="noopener" class="course-card">
+            <span class="course-badge-new">New</span>
+            <div class="course-tag">Confidence &amp; Mindset</div>
+            <div class="course-title">Impostor Syndrome: What It Is and How to Overcome It</div>
+            <div class="course-desc">Understand the patterns behind impostor syndrome and learn evidence-based strategies for working through it with clarity.</div>
+            <div class="course-meta">Free &middot; E-learning</div>
+          </a>
+          <a href="https://spi.stambaughness.com/" target="_blank" rel="noopener" class="course-card">
+            <span class="course-badge-new">New</span>
+            <div class="course-tag">Resilience</div>
+            <div class="course-title">Coping with Workplace Change</div>
+            <div class="course-desc">Practical frameworks for navigating organizational change — adapting to uncertainty while maintaining focus and confidence.</div>
+            <div class="course-meta">Free &middot; E-learning</div>
+          </a>
         </div>
 
         <p style="margin-top:20px;">More H&amp;W courses will continue dropping throughout the year. If there's a topic you'd like to see, submit a suggestion through the Newsletter Idea form in the footer.</p>
