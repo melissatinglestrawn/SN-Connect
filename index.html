@@ -122,25 +122,31 @@
     .aec-save-date-link:hover { color:#003d38; }
     .aec-save-date-detail { color:rgba(0,0,0,0.6); }
 
-    /* EMPLOYEE VOICES */
-    .voice-hero { margin: 0 -52px 0; position: relative; overflow: hidden; }
-    .voice-hero img { width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block; }
-    .voice-hero figcaption { padding: 12px 52px 0; font-size: 11px; font-style: italic; color: var(--text-light); }
-    .voice-pullquote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; line-height: 1.3; font-weight: 600; font-style: italic; color: var(--green); border-left: 3px solid var(--gold); padding: 6px 0 6px 22px; margin: 32px 0 26px; max-width: 720px; }
-    .voice-byline { display: flex; flex-direction: column; gap: 2px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
-    .voice-byline-name { font-size: 14px; font-weight: 700; color: var(--text); }
-    .voice-byline-name a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--gold); transition: color 0.15s; }
-    .voice-byline-name a:hover { color: var(--green-dark); }
-    .voice-byline-role { font-size: 12px; color: var(--text-light); letter-spacing: 0.02em; }
-    .voice-body { font-size: 14.5px; line-height: 1.85; color: var(--text-mid); }
-    .voice-body p + p { margin-top: 13px; }
-    .voice-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--gold); }
-    .voice-body a:hover { color: var(--green-dark); }
-    .voice-body em { font-style: italic; color: var(--charcoal); }
-    .voice-hashtag { font-size: 12px; color: var(--text-light); font-weight: 600; letter-spacing: 0.05em; margin-top: 18px; }
-    .voice-attrib { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 11px; color: var(--text-light); font-style: italic; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .voice-attrib a { color: var(--green); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold); font-style: normal; transition: color 0.15s; }
-    .voice-attrib a:hover { color: var(--green-dark); }
+    /* EMPLOYEE VOICES — GOLD BLOCK, 2-COL TEXT WITH NESTED PHOTO */
+    .voices-block { background: var(--gold); margin: 0 -52px; padding: 36px 52px 32px; position: relative; overflow: hidden; }
+    .voices-block::before { content:'☆'; position:absolute; top:-30px; right:32px; font-size:200px; opacity:0.06; pointer-events:none; user-select:none; line-height:1; }
+    .voices-eyebrow { font-size:10px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(0,0,0,0.6); margin-bottom:14px; position:relative; z-index:1; }
+    .voices-quote { font-family:'Cormorant Garamond', Georgia, serif; font-size:30px; font-weight:600; font-style:italic; color:#1E1E1C; line-height:1.25; letter-spacing:-0.005em; margin:0 0 18px; max-width:820px; position:relative; z-index:1; }
+    .voices-quote em { color:#003d38; font-style:italic; }
+    .voices-byline { display:flex; flex-direction:column; gap:2px; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid rgba(0,0,0,0.18); position:relative; z-index:1; max-width:820px; }
+    .voices-byline-name { font-size:14px; font-weight:700; color:#1E1E1C; }
+    .voices-byline-name a { color:#003d38; text-decoration:none; border-bottom:1px solid rgba(0,61,56,0.4); transition:border-color 0.15s; }
+    .voices-byline-name a:hover { border-bottom-color:#003d38; }
+    .voices-byline-role { font-size:12px; color:rgba(0,0,0,0.6); letter-spacing:0.02em; }
+    .voices-body { column-count:2; column-gap:32px; column-fill:balance; font-size:13.5px; line-height:1.75; color:rgba(0,0,0,0.78); position:relative; z-index:1; }
+    .voices-body p { margin:0 0 12px; break-inside:avoid; }
+    .voices-body em { font-style:italic; color:#1E1E1C; }
+    .voices-body a { color:#003d38; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(0,61,56,0.4); }
+    .voices-body a:hover { border-bottom-color:#003d38; }
+    .voices-figure { column-span:all; margin:18px 0 22px; break-inside:avoid; }
+    .voices-figure img { width:100%; height:auto; max-height:380px; object-fit:cover; display:block; border:1px solid rgba(0,0,0,0.12); border-radius:2px; }
+    .voices-figure figcaption { margin-top:8px; font-size:11px; font-style:italic; color:rgba(0,0,0,0.55); }
+    .voices-hashtag { margin-top:18px; font-size:12px; color:rgba(0,0,0,0.55); font-weight:700; letter-spacing:0.05em; position:relative; z-index:1; }
+    .voices-attrib { margin-top:22px; padding-top:16px; border-top:1px solid rgba(0,0,0,0.18); font-size:11px; color:rgba(0,0,0,0.55); font-style:italic; display:flex; align-items:center; gap:8px; flex-wrap:wrap; position:relative; z-index:1; }
+    .voices-attrib a { color:#003d38; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(0,61,56,0.4); font-style:normal; }
+    .voices-attrib a:hover { border-bottom-color:#003d38; }
+    /* PARTNERSHIP INTRO */
+    .partnership-intro { font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:0; max-width:760px; }
     .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; overflow: hidden; box-sizing: border-box; }
     .funfact-logo { flex-shrink: 0; }
     .funfact-body { flex: 1; min-width: 0; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
@@ -195,9 +201,11 @@
       .win-callout { flex-direction: column; gap: 14px; align-items: flex-start; }
       .events-grid, .rec-grid, .course-grid, .aec-categories { grid-template-columns: 1fr; }
       .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .voice-hero { margin: 0 -24px 0; }
-      .voice-hero figcaption { padding-left: 24px; padding-right: 24px; }
-      .voice-pullquote { font-size: 21px; padding-left: 18px; }
+      .voices-block { padding-left: 24px; padding-right: 24px; margin: 0 -24px; }
+      .voices-body { column-count: 1; }
+      .voices-quote { font-size: 22px; }
+      .voices-figure { margin: 14px 0 18px; }
+      .voices-figure img { max-height: 260px; }
       .masthead { flex-direction: column; align-items: flex-start; }
       .masthead-right { text-align: left; }
       .footer { flex-direction: column; }
@@ -228,7 +236,6 @@
     <a href="#feature">Feature</a>
     <a href="#voices">Voices</a>
     <a href="#events">Live Events</a>
-    <a href="#aec-awards">AEC Awards</a>
     <a href="#zweig">Partnership</a>
     <a href="#spotlight">Spotlight</a>
     <a href="#resources">Resources</a>
@@ -336,50 +343,6 @@
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
-    <!-- EMPLOYEE VOICES -->
-    <section id="voices">
-      <div class="sec-head">
-        <span class="sec-label">Employee Voices</span>
-        <div class="sec-line"></div>
-        <div class="sec-pip"></div>
-      </div>
-
-      <figure class="voice-hero">
-        <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Hyner-2026-Kristi.jpg?raw=true" alt="Kristi Weierbach trading a high-five with a young supporter at the summit of Hyner View, with the Pennsylvania ridge stretching behind them"/>
-        <figcaption>The summit of Hyner View — four miles in, twelve more to go.</figcaption>
-      </figure>
-
-      <blockquote class="voice-pullquote">
-        "Last year I learned a lot about grit. This year it is about appreciation."
-      </blockquote>
-
-      <div class="voice-byline">
-        <div class="voice-byline-name"><a href="https://www.linkedin.com/in/kristiweierbach" target="_blank" rel="noopener">Kristi Weierbach</a></div>
-        <div class="voice-byline-role">Managing Director, Workforce Advisory &nbsp;·&nbsp; Stambaugh Ness</div>
-      </div>
-
-      <div class="voice-body">
-        <p>Hyner Trail Challenge 2026… I did it again! This picture nearly brought me to tears, as it just shows how the running/hiking community shows up in ways you least expect it. This moment is right at the top of the Hyner View, four miles in and twelve more to go. I do not know this little girl or the photographer, but it will leave a lasting impression on me, and I am sure all the other participants she cheered on that day.</p>
-
-        <p>There were 1,500 people who were registered for the challenge (five hundred for the 50k and 1,000 for the 25k) with 1,234 who crossed the finish line (391 for the 50k and 843 for the 25k). I completed the challenge in 6 hours and 32 minutes, an improvement of 38 minutes from last year. This may not seem like a lot, but it is significant given the terrain.</p>
-
-        <p>Last year I pushed myself physically and mentally beyond what I thought was even possible. Over the past year I trained differently so I could perform better and be more prepared. What I did not expect was the extreme self-doubt and nervousness that settled in. There were several times I wanted to find an excuse to tap out before and during the challenge. I kept repeating words that my accountability partner shared with me the day before — <em>one step at a time.</em></p>
-
-        <p>I received several other messages the day before and the day of the event, and quite honestly if I did not have those on repeat in my head, I am not sure that I would have persevered. Additionally, we lost someone very near and dear to us at SN (<a href="https://www.linkedin.com/in/susanspatrick/" target="_blank" rel="noopener">Susan Patrick</a>), and so she was on my mind a lot too as I worked my way through the trails.</p>
-
-        <p>Last year I learned a lot about grit and this year it is about appreciation. The people who selflessly share words of encouragement, cheer others on, and believe in you when you are struggling to believe in yourself. My goal this year is to do better — give more encouragement, cheer more, and show up for those who need it most. As I sit here recovering, I am unsure if I will do it again, but if someone asked me to help them do the challenge I would show up in a heartbeat.</p>
-
-        <p class="voice-hashtag">#hynerchallenge26</p>
-      </div>
-
-      <div class="voice-attrib">
-        Originally shared on
-        <a href="https://www.linkedin.com/feed/update/urn:li:share:7452392084478656512/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
-
-    <div class="rule-gold"><div class="rule-gold-center"></div></div>
-
     <!-- EVENTS & TRAINING -->
     <section id="events">
       <div class="sec-head">
@@ -440,62 +403,45 @@
       </div>
     </div>
 
-    <!-- AEC FINANCIAL LEADERSHIP AWARDS — THE FINNIES -->
-    <section id="aec-awards" class="aec-awards">
-      <div class="aec-eyebrow">Now Accepting Nominations</div>
-      <div class="aec-title">Introducing <em>the Finnies</em></div>
-      <div class="aec-subtitle">The AEC Financial Leadership Awards</div>
-      <div class="aec-credit">
-        Powered by <a href="https://stambaughness.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Stambaugh Ness</a> &nbsp;·&nbsp; Presented in partnership with <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Zweig Group</a>
+    <!-- EMPLOYEE VOICES — KRISTI'S HYNER STORY -->
+    <section id="voices" class="voices-block">
+      <div class="voices-eyebrow">Employee Voices · Hyner Trail Challenge 2026</div>
+
+      <h2 class="voices-quote">"Last year I learned a lot about <em>grit</em>. This year it is about <em>appreciation</em>."</h2>
+
+      <div class="voices-byline">
+        <div class="voices-byline-name">— <a href="https://www.linkedin.com/in/kristiweierbach" target="_blank" rel="noopener">Kristi Weierbach</a></div>
+        <div class="voices-byline-role">Managing Director, Workforce Advisory &nbsp;·&nbsp; Stambaugh Ness</div>
       </div>
 
-      <p class="aec-desc">
-        The Finnies recognize exceptional finance professionals in the AEC industry who demonstrate strategic leadership, sound financial stewardship, and a measurable impact on their firm's performance and long-term success. This award honors <b>CFOs, Finance Directors, Controllers, and other financial leaders</b> who go beyond day-to-day financial management to serve as trusted advisors, growth partners, and leaders within their organizations.
-      </p>
+      <div class="voices-body">
+        <p>Hyner Trail Challenge 2026… I did it again! This picture nearly brought me to tears, as it just shows how the running/hiking community shows up in ways you least expect it. This moment is right at the top of the Hyner View, four miles in and twelve more to go. I do not know this little girl or the photographer, but it will leave a lasting impression on me, and I am sure all the other participants she cheered on that day.</p>
 
-      <p class="aec-desc">
-        Up to three Finnies will be awarded — one in each firm-size category:
-      </p>
+        <p>There were 1,500 people who were registered for the challenge (five hundred for the 50k and 1,000 for the 25k) with 1,234 who crossed the finish line (391 for the 50k and 843 for the 25k). I completed the challenge in 6 hours and 32 minutes, an improvement of 38 minutes from last year. This may not seem like a lot, but it is significant given the terrain.</p>
 
-      <div class="aec-categories">
-        <div class="aec-cat-card">
-          <div class="aec-cat-label">Small Firm</div>
-          <div class="aec-cat-detail">Under $10M<br/>annual revenue</div>
-        </div>
-        <div class="aec-cat-card">
-          <div class="aec-cat-label">Mid-Sized Firm</div>
-          <div class="aec-cat-detail">$10M – $50M<br/>annual revenue</div>
-        </div>
-        <div class="aec-cat-card">
-          <div class="aec-cat-label">Large Firm</div>
-          <div class="aec-cat-detail">Over $50M<br/>annual revenue</div>
-        </div>
+        <figure class="voices-figure">
+          <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Hyner-2026-Kristi.jpg?raw=true" alt="Kristi Weierbach trading a high-five with a young supporter at the summit of Hyner View, with the Pennsylvania ridge stretching behind them"/>
+          <figcaption>The summit of Hyner View — four miles in, twelve more to go.</figcaption>
+        </figure>
+
+        <p>Last year I pushed myself physically and mentally beyond what I thought was even possible. Over the past year I trained differently so I could perform better and be more prepared. What I did not expect was the extreme self-doubt and nervousness that settled in. There were several times I wanted to find an excuse to tap out before and during the challenge. I kept repeating words that my accountability partner shared with me the day before — <em>one step at a time.</em></p>
+
+        <p>I received several other messages the day before and the day of the event, and quite honestly if I did not have those on repeat in my head, I am not sure that I would have persevered. Additionally, we lost someone very near and dear to us at SN (<a href="https://www.linkedin.com/in/susanspatrick/" target="_blank" rel="noopener">Susan Patrick</a>), and so she was on my mind a lot too as I worked my way through the trails.</p>
+
+        <p>Last year I learned a lot about grit and this year it is about appreciation. The people who selflessly share words of encouragement, cheer others on, and believe in you when you are struggling to believe in yourself. My goal this year is to do better — give more encouragement, cheer more, and show up for those who need it most. As I sit here recovering, I am unsure if I will do it again, but if someone asked me to help them do the challenge I would show up in a heartbeat.</p>
       </div>
 
-      <p class="aec-desc">
-        Recipients exemplify excellence in <b>financial strategy, risk management, operational insight,</b> and <b>collaboration</b> — leaders helping their firms navigate change, drive value, and position themselves for a strong future.
-      </p>
+      <div class="voices-hashtag">#hynerchallenge26</div>
 
-      <div class="aec-bottom-row">
-        <div class="aec-deadline">
-          <span class="aec-deadline-label">Nominations Due</span>
-          <span class="aec-deadline-date">June 12, 2026</span>
-        </div>
-        <a href="https://tally.so/r/VLZpgg" target="_blank" rel="noopener" class="aec-cta">
-          Submit a Nomination →
-        </a>
-      </div>
-
-      <div class="aec-save-date">
-        <span class="aec-save-date-label">Winners Presented At</span>
-        <a href="https://zweiggroup.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" class="aec-save-date-link">ElevateAEC Conference</a>
-        <span class="aec-save-date-detail">&nbsp;·&nbsp; September 29 – October 1, 2026 &nbsp;·&nbsp; Park City, Utah</span>
+      <div class="voices-attrib">
+        Originally shared on
+        <a href="https://www.linkedin.com/feed/update/urn:li:share:7452392084478656512/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </section>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
-    <!-- ZWEIG STRATEGIC PARTNERSHIP -->
+    <!-- ZWEIG STRATEGIC PARTNERSHIP — THE FINNIES -->
     <section id="zweig">
       <div class="sec-head">
         <span class="sec-label">Strategic Partnership</span>
@@ -503,32 +449,60 @@
         <div class="sec-pip"></div>
       </div>
 
-      <div class="funfact" style="align-items:flex-start;">
-        <div class="funfact-logo">
-          <div style="width:90px;height:90px;border-radius:8px;border:3px solid var(--gold);overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
-            <img src="https://www.stambaughness.com/wp-content/uploads/2025/04/Jeremy-Clarke-2025-square_.png" alt="Zweig Group" style="width:100%;height:100%;object-fit:contain;padding:4px;"/>
+      <p class="partnership-intro">
+        A flagship initiative co-launched with our partners at <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:none;border-bottom:1px solid var(--gold);">Zweig Group</a>: industry-wide recognition for the financial leaders shaping the future of AEC.
+      </p>
+
+      <!-- Finnies gold block -->
+      <div class="aec-awards" style="margin-top:22px;">
+        <div class="aec-eyebrow">Now Accepting Nominations</div>
+        <div class="aec-title">Introducing <em>the Finnies</em></div>
+        <div class="aec-subtitle">The AEC Financial Leadership Awards</div>
+        <div class="aec-credit">
+          Powered by <a href="https://stambaughness.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Stambaugh Ness</a> &nbsp;·&nbsp; Presented in partnership with <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Zweig Group</a>
+        </div>
+
+        <p class="aec-desc">
+          The Finnies recognize exceptional finance professionals in the AEC industry who demonstrate strategic leadership, sound financial stewardship, and a measurable impact on their firm's performance and long-term success. This award honors <b>CFOs, Finance Directors, Controllers, and other financial leaders</b> who go beyond day-to-day financial management to serve as trusted advisors, growth partners, and leaders within their organizations.
+        </p>
+
+        <p class="aec-desc">
+          Up to three Finnies will be awarded — one in each firm-size category:
+        </p>
+
+        <div class="aec-categories">
+          <div class="aec-cat-card">
+            <div class="aec-cat-label">Small Firm</div>
+            <div class="aec-cat-detail">Under $10M<br/>annual revenue</div>
+          </div>
+          <div class="aec-cat-card">
+            <div class="aec-cat-label">Mid-Sized Firm</div>
+            <div class="aec-cat-detail">$10M – $50M<br/>annual revenue</div>
+          </div>
+          <div class="aec-cat-card">
+            <div class="aec-cat-label">Large Firm</div>
+            <div class="aec-cat-detail">Over $50M<br/>annual revenue</div>
           </div>
         </div>
 
-        <div class="funfact-body">
-          <div class="funfact-label">Zweig Group · Integration Update</div>
-          <div class="funfact-name">The Road to August: What's Coming Next</div>
+        <p class="aec-desc">
+          Recipients exemplify excellence in <b>financial strategy, risk management, operational insight,</b> and <b>collaboration</b> — leaders helping their firms navigate change, drive value, and position themselves for a strong future.
+        </p>
 
-          <div class="funfact-text" style="font-size:14px; line-height:1.75; color:#243746;">
-            <p style="margin:0 0 16px 0;">
-              <em>[PLACEHOLDER — replace with your May Zweig content. Suggested angle: a brief integration update from Jeremy or another ZG/SN leader covering progress between April's "good crop" letter and the August merger close. Could include a Q&amp;A teaser, joint event mention, or a milestone moment from the past 30 days.]</em>
-            </p>
-
-            <p style="margin:0 0 16px 0;">
-              As we move closer to August, the SN + Zweig integration continues to gain momentum. Behind the scenes, teams from both firms are working through the operational, cultural, and strategic alignment that will make the combined organization stronger from day one. Over the coming weeks, expect more visibility into joint initiatives, shared priorities, and the people leading the work.
-            </p>
-
-            <p style="margin:0 0 16px 0;">
-              <em>[Optional teaser — e.g., "Coming next month: a Q&amp;A with Zweig Group COO on what the integration means for clients" or a mention of a joint event/initiative.]</em>
-            </p>
+        <div class="aec-bottom-row">
+          <div class="aec-deadline">
+            <span class="aec-deadline-label">Nominations Due</span>
+            <span class="aec-deadline-date">June 12, 2026</span>
           </div>
+          <a href="https://tally.so/r/VLZpgg" target="_blank" rel="noopener" class="aec-cta">
+            Submit a Nomination →
+          </a>
+        </div>
 
-          <a href="https://zweiggroup.com" target="_blank" style="display:inline-block;margin-top:18px;padding:8px 16px;background:var(--green);color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;">Learn More →</a>
+        <div class="aec-save-date">
+          <span class="aec-save-date-label">Winners Presented At</span>
+          <a href="https://zweiggroup.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" class="aec-save-date-link">ElevateAEC Conference</a>
+          <span class="aec-save-date-detail">&nbsp;·&nbsp; September 29 – October 1, 2026 &nbsp;·&nbsp; Park City, Utah</span>
         </div>
       </div>
     </section>
