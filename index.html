@@ -117,6 +117,26 @@
     .aec-save-date-link { color:#1E1E1C; font-weight:800; text-decoration:none; border-bottom:1px solid #003d38; transition:color 0.15s; }
     .aec-save-date-link:hover { color:#003d38; }
     .aec-save-date-detail { color:rgba(0,0,0,0.6); }
+
+    /* EMPLOYEE VOICES */
+    .voice-hero { margin: 0 -52px 0; position: relative; overflow: hidden; }
+    .voice-hero img { width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block; }
+    .voice-hero figcaption { padding: 12px 52px 0; font-size: 11px; font-style: italic; color: var(--text-light); }
+    .voice-pullquote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; line-height: 1.3; font-weight: 600; font-style: italic; color: var(--green); border-left: 3px solid var(--gold); padding: 6px 0 6px 22px; margin: 32px 0 26px; max-width: 720px; }
+    .voice-byline { display: flex; flex-direction: column; gap: 2px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+    .voice-byline-name { font-size: 14px; font-weight: 700; color: var(--text); }
+    .voice-byline-name a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--gold); transition: color 0.15s; }
+    .voice-byline-name a:hover { color: var(--green-dark); }
+    .voice-byline-role { font-size: 12px; color: var(--text-light); letter-spacing: 0.02em; }
+    .voice-body { font-size: 14.5px; line-height: 1.85; color: var(--text-mid); }
+    .voice-body p + p { margin-top: 13px; }
+    .voice-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--gold); }
+    .voice-body a:hover { color: var(--green-dark); }
+    .voice-body em { font-style: italic; color: var(--charcoal); }
+    .voice-hashtag { font-size: 12px; color: var(--text-light); font-weight: 600; letter-spacing: 0.05em; margin-top: 18px; }
+    .voice-attrib { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 11px; color: var(--text-light); font-style: italic; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .voice-attrib a { color: var(--green); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold); font-style: normal; transition: color 0.15s; }
+    .voice-attrib a:hover { color: var(--green-dark); }
     .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; overflow: hidden; box-sizing: border-box; }
     .funfact-logo { flex-shrink: 0; }
     .funfact-body { flex: 1; min-width: 0; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
@@ -171,6 +191,9 @@
       .win-callout { flex-direction: column; gap: 14px; align-items: flex-start; }
       .events-grid, .rec-grid, .course-grid, .aec-categories { grid-template-columns: 1fr; }
       .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .voice-hero { margin: 0 -24px 0; }
+      .voice-hero figcaption { padding-left: 24px; padding-right: 24px; }
+      .voice-pullquote { font-size: 21px; padding-left: 18px; }
       .masthead { flex-direction: column; align-items: flex-start; }
       .masthead-right { text-align: left; }
       .footer { flex-direction: column; }
@@ -199,6 +222,7 @@
   <nav class="nav">
     <a href="#leadership">Leadership</a>
     <a href="#feature">Feature</a>
+    <a href="#voices">Voices</a>
     <a href="#events">Live Events</a>
     <a href="#aec-awards">AEC Awards</a>
     <a href="#zweig">Partnership</a>
@@ -299,6 +323,50 @@
       </div>
 
       <a href="https://spi.stambaughness.com" class="cta-link">Explore in SPI</a>
+    </section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- EMPLOYEE VOICES -->
+    <section id="voices">
+      <div class="sec-head">
+        <span class="sec-label">Employee Voices</span>
+        <div class="sec-line"></div>
+        <div class="sec-pip"></div>
+      </div>
+
+      <figure class="voice-hero">
+        <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Hyner-2026-Kristi.jpg?raw=true" alt="Kristi Weierbach trading a high-five with a young supporter at the summit of Hyner View, with the Pennsylvania ridge stretching behind them"/>
+        <figcaption>The summit of Hyner View — four miles in, twelve more to go.</figcaption>
+      </figure>
+
+      <blockquote class="voice-pullquote">
+        "Last year I learned a lot about grit. This year it is about appreciation."
+      </blockquote>
+
+      <div class="voice-byline">
+        <div class="voice-byline-name"><a href="https://www.linkedin.com/in/kristiweierbach" target="_blank" rel="noopener">Kristi Weierbach</a></div>
+        <div class="voice-byline-role">Managing Director, Workforce Advisory &nbsp;·&nbsp; Stambaugh Ness</div>
+      </div>
+
+      <div class="voice-body">
+        <p>Hyner Trail Challenge 2026… I did it again! This picture nearly brought me to tears, as it just shows how the running/hiking community shows up in ways you least expect it. This moment is right at the top of the Hyner View, four miles in and twelve more to go. I do not know this little girl or the photographer, but it will leave a lasting impression on me, and I am sure all the other participants she cheered on that day.</p>
+
+        <p>There were 1,500 people who were registered for the challenge (five hundred for the 50k and 1,000 for the 25k) with 1,234 who crossed the finish line (391 for the 50k and 843 for the 25k). I completed the challenge in 6 hours and 32 minutes, an improvement of 38 minutes from last year. This may not seem like a lot, but it is significant given the terrain.</p>
+
+        <p>Last year I pushed myself physically and mentally beyond what I thought was even possible. Over the past year I trained differently so I could perform better and be more prepared. What I did not expect was the extreme self-doubt and nervousness that settled in. There were several times I wanted to find an excuse to tap out before and during the challenge. I kept repeating words that my accountability partner shared with me the day before — <em>one step at a time.</em></p>
+
+        <p>I received several other messages the day before and the day of the event, and quite honestly if I did not have those on repeat in my head, I am not sure that I would have persevered. Additionally, we lost someone very near and dear to us at SN (<a href="https://www.linkedin.com/in/susanspatrick/" target="_blank" rel="noopener">Susan Patrick</a>), and so she was on my mind a lot too as I worked my way through the trails.</p>
+
+        <p>Last year I learned a lot about grit and this year it is about appreciation. The people who selflessly share words of encouragement, cheer others on, and believe in you when you are struggling to believe in yourself. My goal this year is to do better — give more encouragement, cheer more, and show up for those who need it most. As I sit here recovering, I am unsure if I will do it again, but if someone asked me to help them do the challenge I would show up in a heartbeat.</p>
+
+        <p class="voice-hashtag">#hynerchallenge26</p>
+      </div>
+
+      <div class="voice-attrib">
+        Originally shared on
+        <a href="https://www.linkedin.com/feed/update/urn:li:share:7452392084478656512/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </section>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
