@@ -191,6 +191,22 @@
     .challenge-footer { font-size:12px; color:var(--text-light); font-style:italic; line-height:1.65; padding-top:14px; border-top:1px solid var(--rule); }
     .challenge-footer b { color:var(--text-mid); font-style:normal; }
 
+    /* LIVE EVENTS, COMPLEMENTARY VERTICAL SIDE BANNER */
+    .events-banner-block { display:grid; grid-template-columns:230px 1fr; gap:0; margin:0 -52px -40px; }
+    .events-banner { background: linear-gradient(180deg, var(--charcoal) 0%, #1E1E1C 100%); color:var(--white); padding:40px 24px 32px; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; overflow:hidden; }
+    .events-banner::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--gold); }
+    .events-banner::after { content:''; position:absolute; bottom:-40px; right:-40px; width:160px; height:160px; border-radius:50%; background:rgba(255,184,28,0.06); }
+    .eb-quarter { font-family:'Cormorant Garamond', Georgia, serif; font-size:60px; font-weight:700; font-style:italic; color:var(--gold); line-height:1; margin-bottom:2px; position:relative; z-index:1; }
+    .eb-divider { width:32px; height:2px; background:var(--gold); opacity:0.55; margin:10px 0 18px; }
+    .eb-icon { font-size:48px; line-height:1; margin:6px 0 16px; }
+    .eb-title { font-family:'Cormorant Garamond', Georgia, serif; font-size:28px; font-weight:700; line-height:1.12; color:var(--white); margin-bottom:6px; position:relative; z-index:1; }
+    .eb-title em { font-style:italic; color:var(--gold); }
+    .eb-subtitle { font-size:11px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:24px; position:relative; z-index:1; }
+    .eb-bottom { margin-top:auto; padding-top:18px; border-top:1px solid rgba(255,184,28,0.35); width:100%; position:relative; z-index:1; }
+    .eb-month { font-family:'Cormorant Garamond', Georgia, serif; font-size:30px; font-weight:700; font-style:italic; color:var(--gold); line-height:1; }
+    .eb-year { font-size:11px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-top:4px; }
+    .events-content-col { padding:28px 32px 40px; }
+
     /* SNAPSHOT BLURB WITH READ MORE */
     .snapshot-blurb { padding:18px 22px 20px; background:var(--off-white); border-top:1px solid var(--rule); }
     .snapshot-blurb-eyebrow { font-size:9.5px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--green); margin-bottom:6px; }
@@ -284,6 +300,9 @@
       .challenge-banner { padding: 28px 24px; }
       .challenge-content { padding: 28px 24px; }
       .cc-weeks { grid-template-columns: 1fr; }
+      .events-banner-block { grid-template-columns: 1fr; margin: 0 -24px -28px; }
+      .events-banner { padding: 28px 24px; }
+      .events-content-col { padding: 24px 24px 28px; }
       .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
       .voices-block { padding-left: 24px; padding-right: 24px; margin: 0 -24px; }
       .voices-body { column-count: 1; }
@@ -472,7 +491,7 @@
     <!-- Q2 WELLNESS CHALLENGE -->
     <section id="wellness-challenge">
       <div class="sec-head">
-        <span class="sec-label">Wellness Initiative</span>
+        <span class="sec-label">HR Wellness Initiative</span>
         <div class="sec-line"></div>
         <div class="sec-pip"></div>
       </div>
@@ -595,9 +614,18 @@
         <div class="sec-pip"></div>
       </div>
 
-      <p class="partnership-intro">
-        A flagship initiative co-launched with our partners at <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:none;border-bottom:1px solid var(--gold);">Zweig Group</a>: industry-wide recognition for the financial leaders shaping the future of AEC.
-      </p>
+      <div class="photo-moment" style="margin-top:8px;">
+        <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Team%20Picture.jpg?raw=true" alt="SN and Zweig Group Leadership Team at the 2026 Leadership Conference in Dallas, TX" style="width:100%; max-height:360px; object-fit:cover; display:block;"/>
+        <div class="photo-caption">
+          SN + Zweig Group Leadership Team at the 2026 Leadership Conference in Dallas, TX.
+        </div>
+        <div class="snapshot-blurb">
+          <div class="snapshot-blurb-eyebrow">From The Zweig Letter</div>
+          <h4 class="snapshot-blurb-title">One Year Strong, and <em>Just Getting Started</em></h4>
+          <p class="snapshot-blurb-body">CEOs Steve Hake and Chad Clinehens reflect on year one of the SN + Zweig partnership: unified M&amp;A and ownership transition services, broader talent solutions, and deeper industry research, all built around the belief that AEC firms deserve aligned thinking and genuine collaboration.</p>
+          <a href="https://zweiggroup.com/blogs/the-zweig-letter/aec-partnership-growth-transition-services" target="_blank" rel="noopener" class="snapshot-blurb-cta">Read the Letter →</a>
+        </div>
+      </div>
 
       <!-- Finnies gold block -->
       <div class="aec-awards" style="margin-top:22px;">
@@ -664,65 +692,57 @@
           <div style="width:28px;height:4px;background:#FFB81C;border-radius:2px;flex-shrink:0;"></div>
         </div>
 
-        <p style="font-size:14px;color:#ffffff;line-height:1.7;margin-bottom:24px;padding:14px 18px;background:var(--teal);border-left:3px solid var(--gold);">This quarter's live training sessions mark the first step in a firm-wide rollout of intentional development at Stambaugh Ness, the foundation for more robust practice area development and personalized individual growth opportunities on the horizon. Every team member is expected to attend at least one session per quarter. Register and track your progress in SPI.</p>
+        <div class="events-banner-block">
+          <aside class="events-banner">
+            <div class="eb-quarter">Q2</div>
+            <div class="eb-divider"></div>
+            <div class="eb-icon">🎓</div>
+            <div class="eb-title">Power<br/><em>Skills</em></div>
+            <div class="eb-subtitle">Live Series</div>
+            <div class="eb-bottom">
+              <div class="eb-month">Apr-Jun</div>
+              <div class="eb-year">2026</div>
+            </div>
+          </aside>
 
-        <div class="events-grid">
-          <div class="event-card">
-            <img src="https://www.odgersinterim.com/fileadmin/_processed_/d/6/csm_Active_Listening_in_the_workplace_90134e6f12.jpg" alt="Active Listening" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
-            <div class="event-badge"><span class="mo">APR</span><span class="dy">2026</span></div>
-            <div class="event-title">Active Listening: The #1 Power Skill</div>
-            <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
-            <div class="event-desc">Learn to listen with the intent to understand, not just respond. Practice presence, paraphrasing, and reflective listening in client and team conversations.</div>
-            <br>
-            <a href="https://spi.stambaughness.com/learn/courses/844/active-listening-the-1-power-skill/sessions/27/active-listening-the-1-power-skill" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">View Past Recording →</a>
-          </div>
-          <div class="event-card">
-            <img src="https://www.toastmasters.org/magazine/magazine-issues/2022/apr/medias/images/pubs-and-magazine/2022-digital-magazine/04/awkward-conversations/22-awkward-conversations-main.png" alt="Coaching Conversations" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
-            <div class="event-badge"><span class="mo">MAY</span><span class="dy">2026</span></div>
-            <div class="event-title">Coaching Conversations</div>
-            <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
-            <div class="event-desc">Coaching isn't just a manager tool. It's how every professional accelerates growth. Learn when to coach vs. advise and how to hold a high-impact coaching conversation.</div>
-            <br>
-            <a href="https://spi.stambaughness.com/learn/courses/886/coaching-conversations" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">Registration is Open! →</a>
-          </div>
-          <div class="event-card">
-            <img src="https://blog.insynctraining.com/hubfs/09152020%20Facilitation%20Tips%20Series%20Blog%20Part%202%20Feedback.png" alt="Giving and Receiving Feedback" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
-            <div class="event-badge"><span class="mo">JUN</span><span class="dy">2026</span></div>
-            <div class="event-title">Giving &amp; Receiving Feedback</div>
-            <div class="event-meta">Live Above the Line &nbsp;·&nbsp; All Staff</div>
-            <div class="event-desc">Master the Situation-Behavior-Impact feedback model. Build a culture where feedback is expected, welcomed, and acted on at every level of the organization.</div>
-          </div>
-          <div class="event-card" style="background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,184,28,0.45);border-bottom:1.5px dashed rgba(255,184,28,0.45);display:flex;align-items:center;justify-content:center;text-align:center;">
-            <div>
-              <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;">Requirement</div>
-              <div style="font-size:22px;font-weight:800;color:#FFB81C;line-height:1.2;">1 Session<br/>Per Quarter</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:8px;">All sessions tracked<br/>in SPI / Rippling</div>
+          <div class="events-content-col">
+            <p style="font-size:14px;color:#ffffff;line-height:1.7;margin-bottom:24px;padding:14px 18px;background:var(--teal);border-left:3px solid var(--gold);">This quarter's live training sessions mark the first step in a firm-wide rollout of intentional development at Stambaugh Ness, the foundation for more robust practice area development and personalized individual growth opportunities on the horizon. Every team member is expected to attend at least one session per quarter. Register and track your progress in SPI.</p>
+
+            <div class="events-grid">
+              <div class="event-card">
+                <img src="https://www.odgersinterim.com/fileadmin/_processed_/d/6/csm_Active_Listening_in_the_workplace_90134e6f12.jpg" alt="Active Listening" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+                <div class="event-badge"><span class="mo">APR</span><span class="dy">2026</span></div>
+                <div class="event-title">Active Listening: The #1 Power Skill</div>
+                <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
+                <div class="event-desc">Learn to listen with the intent to understand, not just respond. Practice presence, paraphrasing, and reflective listening in client and team conversations.</div>
+                <br>
+                <a href="https://spi.stambaughness.com/learn/courses/844/active-listening-the-1-power-skill/sessions/27/active-listening-the-1-power-skill" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">View Past Recording →</a>
+              </div>
+              <div class="event-card">
+                <img src="https://www.toastmasters.org/magazine/magazine-issues/2022/apr/medias/images/pubs-and-magazine/2022-digital-magazine/04/awkward-conversations/22-awkward-conversations-main.png" alt="Coaching Conversations" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+                <div class="event-badge"><span class="mo">MAY</span><span class="dy">2026</span></div>
+                <div class="event-title">Coaching Conversations</div>
+                <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
+                <div class="event-desc">Coaching isn't just a manager tool. It's how every professional accelerates growth. Learn when to coach vs. advise and how to hold a high-impact coaching conversation.</div>
+                <br>
+                <a href="https://spi.stambaughness.com/learn/courses/886/coaching-conversations" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">Registration is Open! →</a>
+              </div>
+              <div class="event-card">
+                <img src="https://blog.insynctraining.com/hubfs/09152020%20Facilitation%20Tips%20Series%20Blog%20Part%202%20Feedback.png" alt="Giving and Receiving Feedback" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+                <div class="event-badge"><span class="mo">JUN</span><span class="dy">2026</span></div>
+                <div class="event-title">Giving &amp; Receiving Feedback</div>
+                <div class="event-meta">Live Above the Line &nbsp;·&nbsp; All Staff</div>
+                <div class="event-desc">Master the Situation-Behavior-Impact feedback model. Build a culture where feedback is expected, welcomed, and acted on at every level of the organization.</div>
+              </div>
+              <div class="event-card" style="background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,184,28,0.45);border-bottom:1.5px dashed rgba(255,184,28,0.45);display:flex;align-items:center;justify-content:center;text-align:center;">
+                <div>
+                  <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;">Requirement</div>
+                  <div style="font-size:22px;font-weight:800;color:#FFB81C;line-height:1.2;">1 Session<br/>Per Quarter</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:8px;">All sessions tracked<br/>in SPI / Rippling</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="rule-gold"><div class="rule-gold-center"></div></div>
-
-    <!-- SNAPSHOT -->
-    <section id="photo">
-      <div class="sec-head">
-        <span class="sec-label">Snapshot</span>
-        <div class="sec-line"></div>
-        <div class="sec-pip"></div>
-      </div>
-
-      <div class="photo-moment">
-        <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Team%20Picture.jpg?raw=true" alt="SN and Zweig Group Leadership Team at the 2026 Leadership Conference in Dallas, TX" style="width:100%; max-height:360px; object-fit:cover; display:block;"/>
-        <div class="photo-caption">
-          SN + Zweig Group Leadership Team at the 2026 Leadership Conference in Dallas, TX.
-        </div>
-        <div class="snapshot-blurb">
-          <div class="snapshot-blurb-eyebrow">From The Zweig Letter</div>
-          <h4 class="snapshot-blurb-title">One Year Strong, and <em>Just Getting Started</em></h4>
-          <p class="snapshot-blurb-body">CEOs Steve Hake and Chad Clinehens reflect on year one of the SN + Zweig partnership: unified M&amp;A and ownership transition services, broader talent solutions, and deeper industry research, all built around the belief that AEC firms deserve aligned thinking and genuine collaboration.</p>
-          <a href="https://zweiggroup.com/blogs/the-zweig-letter/aec-partnership-growth-transition-services" target="_blank" rel="noopener" class="snapshot-blurb-cta">Read the Letter →</a>
         </div>
       </div>
     </section>
@@ -740,9 +760,7 @@
         <li class="res-item"><div><div class="res-tag">Health &amp; Wellness</div><div class="res-title">SPI Health &amp; Wellness Catalog <span class="en">New</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Browse →</a></li>
         <li class="res-item"><div><div class="res-tag">Tool / Platform</div><div class="res-title">Skills &amp; Performance Institute <span class="en">SPI</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Access →</a></li>
         <li class="res-item"><div><div class="res-tag">Industry Initiative</div><div class="res-title">The Finnies, AEC Financial Leadership Awards <span class="en">Due June 12</span></div></div><a href="https://tally.so/r/VLZpgg" class="res-cta">Nominate →</a></li>
-        <li class="res-item"><div><div class="res-tag">Mental Health</div><div class="res-title">Employee Assistance Program (EAP) <span class="en">Confidential</span></div></div><a href="#" class="res-cta">Learn More →</a></li>
-        <li class="res-item"><div><div class="res-tag">Article / Podcast</div><div class="res-title">The Power of Mattering <span class="en">Zach Mercurio</span></div></div><a href="https://www.youtube.com/watch?v=WSjdcc3rvTw" class="res-cta">Watch/Listen →</a></li>
-        <li class="res-item"><div><div class="res-tag">Policy / Document</div><div class="res-title">SN AI Policy <span class="en">AI</span></div></div><a href="https://sn.sharepoint.com/:b:/s/SNAIInsights/IQCb5oF3lv6TQ46MwdADgWpIAYMvNFG2-NX9Eyc535rVM5M?e=dgm2Ck" class="res-cta">View →</a></li>
+        <li class="res-item"><div><div class="res-tag">Mental Health</div><div class="res-title">Employee Assistance Program (EAP) <span class="en">Confidential</span></div></div><a href="https://mybenefitguide.nfp.com/Stambaughness/Guide/index.html" target="_blank" rel="noopener" class="res-cta">View Guide →</a></li>
       </ul>
     </section>
 
