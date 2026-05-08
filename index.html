@@ -112,6 +112,30 @@
     .req-card-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 56px; font-weight: 700; font-style: italic; color: var(--charcoal); line-height: 0.95; margin-bottom: 2px; }
     .req-card-text { font-size: 13px; font-weight: 800; color: var(--charcoal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
     .req-card-note { font-size: 10.5px; color: rgba(0,0,0,0.55); font-weight: 700; line-height: 1.45; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* URGENT HRIS CALLOUT */
+    .urgent-callout { margin: 0 -52px 32px; background: linear-gradient(135deg, var(--charcoal) 0%, #1E1E1C 100%); color: var(--white); padding: 32px 48px 28px; position: relative; overflow: hidden; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+    .urgent-callout::before { content:''; position:absolute; top:-40px; right:-40px; width:240px; height:240px; border-radius:50%; background:rgba(255,184,28,0.05); pointer-events:none; }
+    .urgent-callout::after { content:''; position:absolute; bottom:-30px; left:-30px; width:160px; height:160px; border-radius:50%; background:rgba(255,184,28,0.04); pointer-events:none; }
+    .urgent-eyebrow { display: inline-block; background: var(--gold); color: var(--charcoal); padding: 6px 14px; font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; border-radius: 2px; box-shadow: 0 4px 14px rgba(255,184,28,0.3); position: relative; z-index: 2; }
+    .urgent-hed { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 700; color: var(--white); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.01em; position: relative; z-index: 2; }
+    .urgent-hed em { font-style: italic; color: var(--gold); }
+    .urgent-subhed { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.65; margin: 0 0 22px; max-width: 720px; position: relative; z-index: 2; }
+    .urgent-subhed b { color: var(--gold); font-weight: 800; }
+    .urgent-trainings { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; position: relative; z-index: 2; }
+    .urgent-training-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,184,28,0.3); border-left: 4px solid var(--gold); padding: 16px 20px; }
+    .urgent-training-required { display: inline-block; background: var(--gold); color: var(--charcoal); padding: 3px 9px; font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px; border-radius: 2px; }
+    .urgent-training-audience { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+    .urgent-training-date { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 700; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .urgent-training-time { font-size: 13px; font-weight: 700; color: var(--white); }
+    .urgent-body { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; margin-bottom: 22px; position: relative; z-index: 2; }
+    .urgent-body-block h4 { font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin: 0 0 6px; }
+    .urgent-body-block p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.65; margin: 0; }
+    .urgent-footer { padding-top: 18px; border-top: 1px solid rgba(255,184,28,0.25); display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; z-index: 2; }
+    .urgent-footer-block { font-size: 12.5px; color: rgba(255,255,255,0.85); line-height: 1.55; }
+    .urgent-footer-block b { color: var(--gold); display: block; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; font-weight: 800; }
+    .urgent-footer-block a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,184,28,0.5); transition: border-color 0.15s; }
+    .urgent-footer-block a:hover { border-bottom-color: var(--gold); }
     .win-callout { background: var(--green); padding: 22px 28px; display: flex; align-items: center; gap: 20px; }
     .win-icon { font-size: 32px; flex-shrink: 0; }
     .win-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
@@ -325,6 +349,9 @@
       .events-banner-block { grid-template-columns: 1fr; margin: 0 -24px -28px; }
       .events-banner { padding: 28px 24px; }
       .events-content-col { padding: 24px 24px 28px; }
+      .urgent-callout { margin: 0 -24px 24px; padding: 24px 24px 22px; }
+      .urgent-trainings, .urgent-body, .urgent-footer { grid-template-columns: 1fr; }
+      .urgent-hed { font-size: 28px; }
       .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
       .voices-block { padding-left: 24px; padding-right: 24px; margin: 0 -24px; }
       .voices-body { column-count: 1; }
@@ -771,6 +798,52 @@
         </div>
       </div>
     </section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- URGENT: HRIS LAUNCH -->
+    <div class="urgent-callout">
+      <div class="urgent-eyebrow">Action Required · HRIS Launch</div>
+      <h2 class="urgent-hed">Meet <em>Rippling</em>, our new HR platform.</h2>
+      <p class="urgent-subhed">Going live <b>May 13, 2026</b>. Required training is scheduled. Calendar invites are coming from hrdept@stambaughness.com.</p>
+
+      <div class="urgent-trainings">
+        <div class="urgent-training-card">
+          <span class="urgent-training-required">Required Training</span>
+          <div class="urgent-training-audience">All Employees</div>
+          <div class="urgent-training-date">May 13, 2026</div>
+          <div class="urgent-training-time">10:00 AM CST</div>
+        </div>
+        <div class="urgent-training-card">
+          <span class="urgent-training-required">Required Training</span>
+          <div class="urgent-training-audience">People Managers / Leaders</div>
+          <div class="urgent-training-date">May 19, 2026</div>
+          <div class="urgent-training-time">10:00 AM CST</div>
+        </div>
+      </div>
+
+      <div class="urgent-body">
+        <div class="urgent-body-block">
+          <h4>What is Rippling?</h4>
+          <p>An HR technology platform that will house our HRIS (employee information, documents, profiles), talent acquisition, performance reviews, compensation data, and more. One unified stop for all your HR needs.</p>
+        </div>
+        <div class="urgent-body-block">
+          <h4>What does it mean for you?</h4>
+          <p>Everyone transitions to the new platform on May 13. You'll register your account, get familiar with the system, and set it up in a way that works best for you. Optional open office hours will follow the required trainings for any additional questions.</p>
+        </div>
+      </div>
+
+      <div class="urgent-footer">
+        <div class="urgent-footer-block">
+          <b>Watch For</b>
+          Calendar invites from <a href="mailto:hrdept@stambaughness.com">hrdept@stambaughness.com</a>
+        </div>
+        <div class="urgent-footer-block">
+          <b>Specific Questions?</b>
+          Email <a href="mailto:csutcliffe@stambaughness.com">Chara Sutcliffe</a>. Most answers will come in the trainings.
+        </div>
+      </div>
+    </div>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
