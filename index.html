@@ -147,6 +147,34 @@
     .voices-attrib a:hover { border-bottom-color:var(--green); }
     /* PARTNERSHIP INTRO */
     .partnership-intro { font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:0; max-width:760px; }
+
+    /* WISE & WELL — WELLNESS PARTNER RESOURCES */
+    .ww-intro { font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:22px; max-width:760px; }
+    .ww-intro b { color:var(--text); }
+    .ww-webinar { background:var(--white); border:1px solid var(--rule); border-left:4px solid var(--teal); padding:28px 30px; margin-bottom:20px; }
+    .ww-webinar-tag { display:inline-block; font-size:9.5px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); background:rgba(0,118,129,0.08); padding:4px 10px; border-radius:2px; margin-bottom:14px; }
+    .ww-webinar-title { font-family:'Cormorant Garamond', Georgia, serif; font-size:28px; font-weight:700; color:var(--text); line-height:1.15; margin-bottom:4px; letter-spacing:-0.01em; }
+    .ww-webinar-subtitle { font-size:14px; font-style:italic; color:var(--text-mid); margin-bottom:16px; }
+    .ww-webinar-desc { font-size:13.5px; color:var(--text-mid); line-height:1.7; margin-bottom:18px; }
+    .ww-webinar-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding:14px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); margin-bottom:18px; }
+    .ww-detail-label { font-size:9px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:5px; }
+    .ww-detail-value { font-size:13px; font-weight:700; color:var(--text); line-height:1.45; }
+    .ww-webinar-learn { margin-bottom:22px; }
+    .ww-webinar-learn-label { font-size:9px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:10px; }
+    .ww-webinar-learn ul { list-style:none; margin:0; padding:0; }
+    .ww-webinar-learn li { font-size:13px; color:var(--text-mid); line-height:1.55; padding:5px 0 5px 22px; position:relative; }
+    .ww-webinar-learn li::before { content:'✓'; position:absolute; left:0; top:5px; color:var(--green); font-weight:800; }
+    .ww-webinar-cta { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; background:var(--green); color:#fff; font-size:11px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; border-radius:2px; transition:background 0.15s, transform 0.15s; }
+    .ww-webinar-cta:hover { background:var(--green-dark); transform:translateY(-1px); }
+    .ww-webinar-note { font-size:11.5px; font-style:italic; color:var(--text-light); margin-top:14px; line-height:1.55; }
+    .ww-monthly { background:var(--gold-pale); border-left:3px solid var(--gold); padding:20px 24px; }
+    .ww-monthly-header { display:flex; align-items:baseline; gap:14px; margin-bottom:14px; flex-wrap:wrap; }
+    .ww-monthly-tag { font-size:9.5px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); }
+    .ww-monthly-title { font-size:15px; font-weight:800; color:var(--text); }
+    .ww-monthly-list { list-style:none; margin:0; padding:0; }
+    .ww-monthly-list li { font-size:12.5px; color:var(--text-mid); line-height:1.6; padding:8px 0; border-top:1px solid rgba(0,0,0,0.06); }
+    .ww-monthly-list li:first-child { border-top:none; padding-top:2px; }
+    .ww-monthly-list li b { color:var(--text); }
     .funfact { background: var(--gold-pale); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; overflow: hidden; box-sizing: border-box; }
     .funfact-logo { flex-shrink: 0; }
     .funfact-body { flex: 1; min-width: 0; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
@@ -199,7 +227,7 @@
       .leadership, .rec-wrap, .spotlight, .aec-awards { margin: 0 -24px; }
       .funfact { flex-direction: column; gap: 12px; }
       .win-callout { flex-direction: column; gap: 14px; align-items: flex-start; }
-      .events-grid, .rec-grid, .course-grid, .aec-categories { grid-template-columns: 1fr; }
+      .events-grid, .rec-grid, .course-grid, .aec-categories, .ww-webinar-grid { grid-template-columns: 1fr; }
       .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
       .voices-block { padding-left: 24px; padding-right: 24px; margin: 0 -24px; }
       .voices-body { column-count: 1; }
@@ -506,48 +534,62 @@
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
-    <!-- EMPLOYEE RECOGNITION -->
-    <section id="recognition">
+    <!-- WISE & WELL — WELLNESS PARTNER RESOURCES -->
+    <section id="wisewell">
       <div class="rec-wrap">
         <div class="sec-head" style="margin-top:0">
-          <span class="sec-label">Employee Recognition</span>
+          <span class="sec-label" style="color:var(--text-light)">Wise &amp; Well · From Our Partners at NFP</span>
           <div class="sec-line"></div>
           <div class="sec-pip"></div>
         </div>
-        <p class="rec-intro">A round of applause for the people going above and beyond this month — the quiet wins, the team lifts, the moments that make SN feel like SN. <em>[PLACEHOLDER — replace cards below with real shout-outs from your nomination form / leader submissions.]</em></p>
-        <div class="rec-grid">
-          <div class="rec-card">
-            <div class="rec-av">[X]</div>
+
+        <p class="ww-intro">Through our benefits partnership with <b>NFP</b>, all SN team members have access to <b>Wise &amp; Well</b> — a year-round whole-person wellbeing program with expert-led webinars, monthly newsletters, on-demand resources, and the Wise &amp; Well Digital Experience.</p>
+
+        <!-- FEATURED WEBINAR -->
+        <div class="ww-webinar">
+          <span class="ww-webinar-tag">Live Webinar · Free for All Staff</span>
+          <h3 class="ww-webinar-title">Staying Present in Unpredictable Times</h3>
+          <div class="ww-webinar-subtitle">Cultivating Calm, Connection, and Clarity</div>
+
+          <p class="ww-webinar-desc">An interactive session designed to help you build mental flexibility and stay grounded during times of stress. Learn how the nervous system responds to overwhelm and explore practical strategies — rooted in environment, relationships, and values — to support presence and resilience.</p>
+
+          <div class="ww-webinar-grid">
             <div>
-              <div class="rec-name">[Employee Name]</div>
-              <div class="rec-role">[Role · Practice Area]</div>
-              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
+              <div class="ww-detail-label">When</div>
+              <div class="ww-detail-value">Tuesday, May 12, 2026<br/>12:00 – 1:00 PM ET</div>
+            </div>
+            <div>
+              <div class="ww-detail-label">Presented by</div>
+              <div class="ww-detail-value">Nicole Roger, MFT<br/>Spring Health</div>
             </div>
           </div>
-          <div class="rec-card">
-            <div class="rec-av">[X]</div>
-            <div>
-              <div class="rec-name">[Employee Name]</div>
-              <div class="rec-role">[Role · Practice Area]</div>
-              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
-            </div>
+
+          <div class="ww-webinar-learn">
+            <div class="ww-webinar-learn-label">What You'll Learn</div>
+            <ul>
+              <li>How to build mental flexibility during times of uncertainty</li>
+              <li>Ways to use the body, connection, and environment to support presence</li>
+              <li>How boundaries, routines, and values can create stability</li>
+              <li>Practical tools to cultivate presence and rebuild steadiness</li>
+            </ul>
           </div>
-          <div class="rec-card">
-            <div class="rec-av">[X]</div>
-            <div>
-              <div class="rec-name">[Employee Name]</div>
-              <div class="rec-role">[Role · Practice Area]</div>
-              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
-            </div>
+
+          <a href="https://go.nfp.com/staying_present" target="_blank" rel="noopener" class="ww-webinar-cta">Register Now →</a>
+
+          <p class="ww-webinar-note">Can't make it live? The session will be recorded and shared with all registrants. All past Wise &amp; Well webinars are available in NFP's Wise &amp; Well Digital Experience.</p>
+        </div>
+
+        <!-- MAY NEWSLETTER HIGHLIGHTS -->
+        <div class="ww-monthly">
+          <div class="ww-monthly-header">
+            <span class="ww-monthly-tag">Also This Month</span>
+            <span class="ww-monthly-title">May Wise &amp; Well Newsletter</span>
           </div>
-          <div class="rec-card">
-            <div class="rec-av">[X]</div>
-            <div>
-              <div class="rec-name">[Employee Name]</div>
-              <div class="rec-role">[Role · Practice Area]</div>
-              <div class="rec-note">"[Recognition note — what they did, why it mattered, who nominated them.]"</div>
-            </div>
-          </div>
+          <ul class="ww-monthly-list">
+            <li><b>Mental Health Awareness Month —</b> recognizing early signs of stress, the power of small daily habits, and why caring for your mental wellbeing isn't a luxury.</li>
+            <li><b>Monthly Moves: The Resistance Band Leg Workout —</b> squats, glute bridges, lunges, and lateral walks you can do almost anywhere.</li>
+            <li><b>Recipe: Strawberry Crisp —</b> juicy in-season berries with a buttery oat crumble. Add a scoop of vanilla ice cream and you have early summer in a bowl.</li>
+          </ul>
         </div>
       </div>
     </section>
