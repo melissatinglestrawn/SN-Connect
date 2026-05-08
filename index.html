@@ -76,7 +76,9 @@
     .course-desc { font-size:11.5px; color:var(--text-mid); line-height:1.55; margin-bottom:12px; }
     .course-meta { font-size:9.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--green); display:flex; align-items:center; gap:7px; padding-top:10px; border-top:1px solid var(--rule); }
     .course-meta::before { content:'▶'; font-size:8px; opacity:0.85; }
-    .course-badge-new { position:absolute; top:14px; right:14px; background:var(--gold); color:var(--charcoal); font-size:8.5px; font-weight:800; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; line-height:1; }
+    .course-badge-new { position:absolute; top:14px; right:14px; background:var(--gold); color:var(--charcoal); font-size:8.5px; font-weight:800; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; line-height:1; z-index:2; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
+    .course-img { width: calc(100% + 36px); height: 100px; margin: -18px -18px 14px; overflow: hidden; position: relative; }
+    .course-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .rule-gold { display: flex; align-items: center; gap: 0; margin: 52px 0; }
     .rule-gold::before, .rule-gold::after { content: ''; flex: 1; height: 2px; background: var(--mid-gray); }
     .rule-gold-center { width: 56px; height: 5px; background: var(--gold); margin: 0 16px; border-radius: 3px; }
@@ -140,6 +142,19 @@
     /* SECTION IMAGES */
     .feature-hero-img { margin: 6px 0 26px; height: 240px; overflow: hidden; }
     .feature-hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feature-stat-hero { width: 100%; height: 100%; display: flex; align-items: center; gap: 36px; padding: 28px 38px; background: linear-gradient(90deg, #F9F9F7 0%, #F4F0E8 100%); box-sizing: border-box; position: relative; overflow: hidden; border-left: 5px solid var(--gold); }
+    .feature-stat-hero::before { content:''; position:absolute; bottom:-100px; right:-60px; width:260px; height:260px; border-radius:50%; background:rgba(0,83,76,0.06); pointer-events:none; }
+    .feature-stat-hero::after { content:''; position:absolute; top:-30px; right:60px; width:100px; height:100px; border-radius:50%; background:rgba(255,184,28,0.10); pointer-events:none; }
+    .feature-stat-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 140px; font-style: italic; font-weight: 700; color: var(--green); line-height: 0.88; letter-spacing: -0.04em; flex-shrink: 0; position: relative; z-index: 1; }
+    .feature-stat-content { flex: 1; position: relative; z-index: 1; }
+    .feature-stat-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .feature-stat-eyebrow::before { content:''; display:inline-block; width:28px; height:2px; background:var(--gold); flex-shrink:0; }
+    .feature-stat-headline { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--text); line-height: 1.2; margin: 0 0 10px; letter-spacing: -0.01em; }
+    .feature-stat-headline em { font-style: italic; color: var(--gold); }
+    .feature-stat-body { font-size: 13px; color: var(--text-mid); font-style: italic; line-height: 1.6; margin: 0 0 14px; }
+    .feature-stat-source { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); }
+    .feature-stat-source a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,184,28,0.5); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
+    .feature-stat-source a:hover { color: var(--green); border-bottom-color: var(--gold); }
     .ww-webinar-img { width: 100%; height: 180px; object-fit: cover; display: block; margin: 0 0 20px; }
     .challenge-img { width: 100%; height: 170px; object-fit: cover; display: block; margin-bottom: 20px; }
     .win-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); flex-shrink: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
@@ -361,6 +376,10 @@
       .urgent-trainings, .urgent-body, .urgent-footer { grid-template-columns: 1fr; }
       .urgent-hed { font-size: 28px; }
       .feature-hero-img { height: 180px; }
+      .feature-hero-img:has(.feature-stat-hero) { height: auto; }
+      .feature-stat-hero { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 22px; }
+      .feature-stat-num { font-size: 88px; }
+      .feature-stat-headline { font-size: 22px; }
       .ww-webinar-img { height: 150px; }
       .challenge-img { height: 140px; }
       .urgent-hero { width: calc(100% + 48px); margin: -24px -24px 18px; height: 110px; }
@@ -450,7 +469,15 @@
       </div>
 
       <div class="feature-hero-img">
-        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Open book in warm sunlit window light, quiet moment of reflection"/>
+        <div class="feature-stat-hero">
+          <div class="feature-stat-num">76%</div>
+          <div class="feature-stat-content">
+            <div class="feature-stat-eyebrow">Workplace Wellness Data</div>
+            <h3 class="feature-stat-headline">of U.S. workers report <em>some level of burnout</em>.</h3>
+            <p class="feature-stat-body">Performance starts with people who recover smartest, focus better, and bring sustained energy to the work.</p>
+            <div class="feature-stat-source">Source · <a href="https://www.mindsharepartners.org/2025-mental-health-at-work-report" target="_blank" rel="noopener">Mind Share Partners · Mental Health at Work 2025 Report</a></div>
+          </div>
+        </div>
       </div>
 
       <div class="feature-kicker">Skills &amp; Performance Institute · Health &amp; Wellness</div>
@@ -467,6 +494,7 @@
         <div class="course-grid">
           <a href="https://spi.stambaughness.com/learn/courses/893/beating-burnout-spot-the-symptoms-and-take-action" target="_blank" rel="noopener" class="course-card">
             <span class="course-badge-new">New</span>
+            <div class="course-img"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Warm restorative sunset, recovery and rest"/></div>
             <div class="course-tag">Burnout Prevention</div>
             <div class="course-title">Beating Burnout: Spot the Symptoms and Take Action</div>
             <div class="course-desc">Recognize the early warning signs of burnout, in yourself and on your team, and take practical steps to recover before it derails your work.</div>
@@ -474,6 +502,7 @@
           </a>
           <a href="https://spi.stambaughness.com/learn/courses/892/dealing-with-stress-pressure-and-burnout" target="_blank" rel="noopener" class="course-card">
             <span class="course-badge-new">New</span>
+            <div class="course-img"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Calm water surface, breathing space"/></div>
             <div class="course-tag">Stress Management</div>
             <div class="course-title">Dealing With Stress, Pressure, and Burnout</div>
             <div class="course-desc">Strategies for navigating high-pressure stretches without losing your edge, or your wellbeing, along the way.</div>
@@ -481,6 +510,7 @@
           </a>
           <a href="https://spi.stambaughness.com/learn/courses/891/5-day-challenge-to-improve-your-mental-health" target="_blank" rel="noopener" class="course-card">
             <span class="course-badge-new">New</span>
+            <div class="course-img"><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Open planner with daily structure"/></div>
             <div class="course-tag">Mental Health</div>
             <div class="course-title">5-Day Challenge to Improve Your Mental Health</div>
             <div class="course-desc">A short, structured five-day program with daily habits and small actions designed to build mental fitness over time.</div>
@@ -488,6 +518,7 @@
           </a>
           <a href="https://spi.stambaughness.com/learn/courses/890/impostor-syndrome-what-it-is-and-how-to-overcome-it" target="_blank" rel="noopener" class="course-card">
             <span class="course-badge-new">New</span>
+            <div class="course-img"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Reflection in a mirror, confidence and self-perception"/></div>
             <div class="course-tag">Confidence &amp; Mindset</div>
             <div class="course-title">Impostor Syndrome: What It Is and How to Overcome It</div>
             <div class="course-desc">Understand the patterns behind impostor syndrome and learn evidence-based strategies for working through it with clarity.</div>
