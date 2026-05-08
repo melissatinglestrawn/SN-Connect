@@ -122,7 +122,7 @@
     .aec-save-date-link:hover { color:var(--gold); }
     .aec-save-date-detail { color:rgba(255,255,255,0.6); }
 
-    /* EMPLOYEE VOICES — PARCHMENT CREAM, 2-COL TEXT WITH NESTED PHOTO */
+    /* EMPLOYEE VOICES, PARCHMENT CREAM, 2-COL TEXT WITH NESTED PHOTO */
     .voices-block { background: #F5EFE5; border-top: 4px solid var(--green); margin: 0 -52px; padding: 36px 52px 32px; position: relative; overflow: hidden; }
     .voices-block::before { content:'☆'; position:absolute; top:-30px; right:32px; font-size:200px; opacity:0.05; color: var(--green); pointer-events:none; user-select:none; line-height:1; }
     .voices-eyebrow { font-size:10px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--green); margin-bottom:14px; position:relative; z-index:1; }
@@ -145,10 +145,62 @@
     .voices-attrib { margin-top:22px; padding-top:16px; border-top:1px solid rgba(0,0,0,0.12); font-size:11px; color:rgba(0,0,0,0.50); font-style:italic; display:flex; align-items:center; gap:8px; flex-wrap:wrap; position:relative; z-index:1; }
     .voices-attrib a { color:var(--green); font-weight:700; text-decoration:none; border-bottom:1px solid rgba(0,83,76,0.35); font-style:normal; }
     .voices-attrib a:hover { border-bottom-color:var(--green); }
+    /* DECORATIVE FEATURE-SPOTLIGHT NUMBERS */
+    .num-deco { position: absolute; top: 16px; right: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 110px; font-weight: 700; font-style: italic; line-height: 0.85; color: var(--gold); opacity: 0.40; pointer-events: none; user-select: none; z-index: 0; letter-spacing: -0.04em; }
+    .num-deco .num-deco-label { display: block; font-family: 'Open Sans', sans-serif; font-size: 9px; font-weight: 800; font-style: normal; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-light); opacity: 0.85; margin-bottom: -4px; line-height: 1; text-align: right; }
+    .feature-spotlight-numbered { position: relative; }
+
     /* PARTNERSHIP INTRO */
     .partnership-intro { font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:0; max-width:760px; }
 
-    /* WISE & WELL — WELLNESS PARTNER RESOURCES */
+    /* Q2 WELLNESS CHALLENGE, VERTICAL SIDE BANNER */
+    .challenge-block { display:grid; grid-template-columns:230px 1fr; gap:0; margin:0 -52px; }
+    .challenge-banner { background: linear-gradient(180deg, var(--green) 0%, #003a35 100%); color:var(--white); padding:40px 24px 32px; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; overflow:hidden; }
+    .challenge-banner::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--gold); }
+    .challenge-banner::after { content:''; position:absolute; bottom:-40px; right:-40px; width:160px; height:160px; border-radius:50%; background:rgba(255,184,28,0.06); }
+    .cb-quarter { font-family:'Cormorant Garamond', Georgia, serif; font-size:60px; font-weight:700; font-style:italic; color:var(--gold); line-height:1; margin-bottom:2px; position:relative; z-index:1; }
+    .cb-divider { width:32px; height:2px; background:var(--gold); opacity:0.55; margin:10px 0 18px; }
+    .cb-icon { font-size:52px; line-height:1; margin:8px 0 16px; }
+    .cb-title { font-family:'Cormorant Garamond', Georgia, serif; font-size:26px; font-weight:700; line-height:1.12; color:var(--white); margin-bottom:6px; position:relative; z-index:1; }
+    .cb-title em { font-style:italic; color:var(--gold); }
+    .cb-subtitle { font-size:11px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:24px; position:relative; z-index:1; }
+    .cb-bottom { margin-top:auto; padding-top:18px; border-top:1px solid rgba(255,184,28,0.35); width:100%; position:relative; z-index:1; }
+    .cb-month { font-family:'Cormorant Garamond', Georgia, serif; font-size:34px; font-weight:700; font-style:italic; color:var(--gold); line-height:1; }
+    .cb-year { font-size:11px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-top:4px; }
+
+    .challenge-content { background:var(--off-white); padding:36px 36px 32px; }
+    .challenge-content-eyebrow { font-size:10px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+    .challenge-content-hed { font-family:'Cormorant Garamond', Georgia, serif; font-size:26px; font-weight:700; color:var(--text); line-height:1.2; margin:0 0 14px; letter-spacing:-0.01em; }
+    .challenge-content-hed em { font-style:italic; color:var(--green); }
+    .challenge-intro { font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:22px; }
+    .challenge-grid { display:grid; grid-template-columns:1fr; gap:12px; margin-bottom:18px; }
+    .challenge-card { background:var(--white); border:1px solid var(--rule); border-left:3px solid var(--gold); padding:14px 18px; }
+    .cc-label { font-size:9.5px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+    .challenge-card p { font-size:13px; color:var(--text-mid); line-height:1.6; margin:0 0 8px; }
+    .challenge-card p:last-child { margin-bottom:0; }
+    .cc-weeks { list-style:none; margin:8px 0 4px; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:4px 16px; }
+    .cc-weeks li { font-size:12px; color:var(--text-mid); padding:3px 0; }
+    .cc-weeks li b { color:var(--green); font-weight:800; }
+    .cc-bonus { background:var(--gold-pale); border-left:2px solid var(--gold); padding:9px 13px; margin-top:10px; font-size:12.5px; color:var(--text-mid); line-height:1.55; }
+    .cc-bonus b { color:var(--text); }
+    .challenge-dates { background:var(--white); border:1px solid var(--rule); padding:14px 18px; margin-bottom:18px; }
+    .cd-row { display:flex; justify-content:space-between; align-items:baseline; padding:7px 0; border-bottom:1px solid var(--rule); gap:12px; }
+    .cd-row:last-child { border-bottom:none; }
+    .cd-label { font-size:9.5px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-light); flex-shrink:0; }
+    .cd-value { font-size:13px; font-weight:700; color:var(--text); text-align:right; }
+    .challenge-footer { font-size:12px; color:var(--text-light); font-style:italic; line-height:1.65; padding-top:14px; border-top:1px solid var(--rule); }
+    .challenge-footer b { color:var(--text-mid); font-style:normal; }
+
+    /* SNAPSHOT BLURB WITH READ MORE */
+    .snapshot-blurb { padding:18px 22px 20px; background:var(--off-white); border-top:1px solid var(--rule); }
+    .snapshot-blurb-eyebrow { font-size:9.5px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--green); margin-bottom:6px; }
+    .snapshot-blurb-title { font-family:'Cormorant Garamond', Georgia, serif; font-size:20px; font-weight:700; color:var(--text); line-height:1.25; margin-bottom:10px; letter-spacing:-0.01em; }
+    .snapshot-blurb-title em { font-style:italic; color:var(--green); }
+    .snapshot-blurb-body { font-size:13px; color:var(--text-mid); line-height:1.65; margin-bottom:12px; }
+    .snapshot-blurb-cta { display:inline-flex; align-items:center; gap:6px; font-size:10.5px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--green); text-decoration:none; padding-bottom:2px; border-bottom:2px solid var(--gold); transition:color 0.15s; }
+    .snapshot-blurb-cta:hover { color:var(--green-dark); }
+
+    /* WISE & WELL, WELLNESS PARTNER RESOURCES */
     .ww-intro { font-size:14px; color:var(--text-mid); line-height:1.7; margin-bottom:22px; max-width:760px; }
     .ww-intro b { color:var(--text); }
     .ww-webinar { background:var(--white); border:1px solid var(--rule); border-left:4px solid var(--teal); padding:28px 30px; margin-bottom:20px; }
@@ -181,9 +233,9 @@
     .funfact-label { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
     .funfact-name { font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
     .funfact-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; word-wrap: break-word; overflow-wrap: break-word; }
-    .spotlight { background: var(--charcoal); margin: 0 -52px; padding: 40px 52px; }
-    .spotlight .sec-label { color: rgba(255,255,255,0.5); }
-    .spotlight .sec-line { background: rgba(255,255,255,0.15); }
+    .spotlight { background: #004A53; margin: 0 -52px; padding: 40px 52px; }
+    .spotlight .sec-label { color: rgba(255,255,255,0.6); }
+    .spotlight .sec-line { background: rgba(255,255,255,0.18); }
     .spotlight-name { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .spotlight-hed { font-size: 22px; font-weight: 800; color: var(--white); line-height: 1.3; margin-bottom: 12px; }
     .spotlight-body { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; }
@@ -228,6 +280,10 @@
       .funfact { flex-direction: column; gap: 12px; }
       .win-callout { flex-direction: column; gap: 14px; align-items: flex-start; }
       .events-grid, .rec-grid, .course-grid, .aec-categories, .ww-webinar-grid { grid-template-columns: 1fr; }
+      .challenge-block { grid-template-columns: 1fr; margin: 0 -24px; }
+      .challenge-banner { padding: 28px 24px; }
+      .challenge-content { padding: 28px 24px; }
+      .cc-weeks { grid-template-columns: 1fr; }
       .aec-bottom-row { flex-direction: column; align-items: flex-start; gap: 14px; }
       .voices-block { padding-left: 24px; padding-right: 24px; margin: 0 -24px; }
       .voices-body { column-count: 1; }
@@ -305,8 +361,8 @@
       </div>
     </section>
 
-    <!-- FEATURE ARTICLE -->
-    <section id="feature">
+    <!-- FEATURE ARTICLE, SPOTLIGHT 1 -->
+    <section id="feature" class="feature-spotlight-numbered"><div class="num-deco">1</div>
       <div class="sec-head">
         <span class="sec-label">Feature Spotlight</span>
         <div class="sec-line"></div>
@@ -315,12 +371,12 @@
 
       <div class="feature-kicker">Skills &amp; Performance Institute · Health &amp; Wellness</div>
       <h2 class="feature-hed">Performance Has a Pulse: Health &amp; Wellness, Now in SPI</h2>
-      <p class="feature-dek"><em>This month, the Skills &amp; Performance Institute is launching a dedicated Health &amp; Wellness catalog — practical, on-demand learning for the way we actually work.</em></p>
+      <p class="feature-dek"><em>This month, the Skills &amp; Performance Institute is launching a dedicated Health &amp; Wellness catalog, practical, on-demand learning for the way we actually work.</em></p>
 
       <div class="feature-body">
-        <p><b>You can't out-perform burnout.</b> The most accomplished people in our firm aren't the ones who push hardest — they're the ones who recover smartest, focus better, and bring sustained energy to the work. May marks the launch of SPI's <b>Health &amp; Wellness catalog</b>, a curated set of courses built specifically for high-performing professionals in demanding roles.</p>
+        <p><b>You can't out-perform burnout.</b> The most accomplished people in our firm aren't the ones who push hardest. They're the ones who recover smartest, focus better, and bring sustained energy to the work. May marks the launch of SPI's <b>Health &amp; Wellness catalog</b>, a curated set of courses built specifically for high-performing professionals in demanding roles.</p>
 
-        <p>These aren't generic wellness videos. They're short, practical, and built to fit between meetings — covering the full spectrum from cognitive performance and stress management to movement, sleep, and resilience.</p>
+        <p>These aren't generic wellness videos. They're short, practical, and built to fit between meetings, covering the full spectrum from cognitive performance and stress management to movement, sleep, and resilience.</p>
 
         <p><b>A few of the courses available now:</b></p>
 
@@ -329,14 +385,14 @@
             <span class="course-badge-new">New</span>
             <div class="course-tag">Burnout Prevention</div>
             <div class="course-title">Beating Burnout: Spot the Symptoms and Take Action</div>
-            <div class="course-desc">Recognize the early warning signs of burnout — in yourself and on your team — and take practical steps to recover before it derails your work.</div>
+            <div class="course-desc">Recognize the early warning signs of burnout, in yourself and on your team, and take practical steps to recover before it derails your work.</div>
             <div class="course-meta">Free &middot; E-learning</div>
           </a>
           <a href="https://spi.stambaughness.com/learn/courses/892/dealing-with-stress-pressure-and-burnout" target="_blank" rel="noopener" class="course-card">
             <span class="course-badge-new">New</span>
             <div class="course-tag">Stress Management</div>
             <div class="course-title">Dealing With Stress, Pressure, and Burnout</div>
-            <div class="course-desc">Strategies for navigating high-pressure stretches without losing your edge — or your wellbeing — along the way.</div>
+            <div class="course-desc">Strategies for navigating high-pressure stretches without losing your edge, or your wellbeing, along the way.</div>
             <div class="course-meta">Free &middot; E-learning</div>
           </a>
           <a href="https://spi.stambaughness.com/learn/courses/891/5-day-challenge-to-improve-your-mental-health" target="_blank" rel="noopener" class="course-card">
@@ -363,187 +419,17 @@
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
 
-    <!-- FIRM WIN CALLOUT -->
-    <div class="win-callout" style="margin:52px -52px 0;">
-      <div class="win-icon">🏆</div>
-      <div>
-        <div class="win-label">Firm Win</div>
-        <div class="win-text">
-          Steven L. Hake, CPA, President &amp; CEO, named to the 2026 Forbes Best-In-State CPAs list — recognized for his leadership in the AEC industry.
-          <a href="https://www.linkedin.com/posts/forbesbestcpas-aecleadership-stambaughness-share-7454691690189258752-F_n2" target="_blank"
-             style="display:inline-block;margin-left:10px;padding:6px 12px;background-color:#232c60;color:#ffffff;text-decoration:none;font-size:12px;border-radius:3px;font-weight:600;">
-             View on LinkedIn
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- EMPLOYEE VOICES — KRISTI'S HYNER STORY -->
-    <section id="voices" class="voices-block">
-      <div class="voices-eyebrow">Employee Voices · Hyner Trail Challenge 2026</div>
-
-      <h2 class="voices-quote">"Last year I learned a lot about <em>grit</em>. This year it is about <em>appreciation</em>."</h2>
-
-      <div class="voices-byline">
-        <div class="voices-byline-name">— <a href="https://www.linkedin.com/in/kristiweierbach" target="_blank" rel="noopener">Kristi Weierbach</a></div>
-        <div class="voices-byline-role">Managing Director, Workforce Advisory &nbsp;·&nbsp; Stambaugh Ness</div>
-      </div>
-
-      <div class="voices-body">
-        <p>Hyner Trail Challenge 2026… I did it again! This picture nearly brought me to tears, as it just shows how the running/hiking community shows up in ways you least expect it. This moment is right at the top of the Hyner View, four miles in and twelve more to go. I do not know this little girl or the photographer, but it will leave a lasting impression on me, and I am sure all the other participants she cheered on that day.</p>
-
-        <p>There were 1,500 people who were registered for the challenge (five hundred for the 50k and 1,000 for the 25k) with 1,234 who crossed the finish line (391 for the 50k and 843 for the 25k). I completed the challenge in 6 hours and 32 minutes, an improvement of 38 minutes from last year. This may not seem like a lot, but it is significant given the terrain.</p>
-
-        <figure class="voices-figure">
-          <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Hyner-2026-Kristi.jpg?raw=true" alt="Kristi Weierbach trading a high-five with a young supporter at the summit of Hyner View, with the Pennsylvania ridge stretching behind them"/>
-          <figcaption>The summit of Hyner View — four miles in, twelve more to go.</figcaption>
-        </figure>
-
-        <p>Last year I pushed myself physically and mentally beyond what I thought was even possible. Over the past year I trained differently so I could perform better and be more prepared. What I did not expect was the extreme self-doubt and nervousness that settled in. There were several times I wanted to find an excuse to tap out before and during the challenge. I kept repeating words that my accountability partner shared with me the day before — <em>one step at a time.</em></p>
-
-        <p>I received several other messages the day before and the day of the event, and quite honestly if I did not have those on repeat in my head, I am not sure that I would have persevered. Additionally, we lost someone very near and dear to us at SN (<a href="https://www.linkedin.com/in/susanspatrick/" target="_blank" rel="noopener">Susan Patrick</a>), and so she was on my mind a lot too as I worked my way through the trails.</p>
-
-        <p>Last year I learned a lot about grit and this year it is about appreciation. The people who selflessly share words of encouragement, cheer others on, and believe in you when you are struggling to believe in yourself. My goal this year is to do better — give more encouragement, cheer more, and show up for those who need it most. As I sit here recovering, I am unsure if I will do it again, but if someone asked me to help them do the challenge I would show up in a heartbeat.</p>
-      </div>
-
-      <div class="voices-hashtag">#hynerchallenge26</div>
-
-      <div class="voices-attrib">
-        Originally shared on
-        <a href="https://www.linkedin.com/feed/update/urn:li:share:7452392084478656512/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
-
-    <div class="rule-gold"><div class="rule-gold-center"></div></div>
-
-    <!-- ZWEIG STRATEGIC PARTNERSHIP — THE FINNIES -->
-    <section id="zweig">
-      <div class="sec-head">
-        <span class="sec-label">Strategic Partnership</span>
-        <div class="sec-line"></div>
-        <div class="sec-pip"></div>
-      </div>
-
-      <p class="partnership-intro">
-        A flagship initiative co-launched with our partners at <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:none;border-bottom:1px solid var(--gold);">Zweig Group</a>: industry-wide recognition for the financial leaders shaping the future of AEC.
-      </p>
-
-      <!-- Finnies gold block -->
-      <div class="aec-awards" style="margin-top:22px;">
-        <div class="aec-eyebrow">Now Accepting Nominations</div>
-        <div class="aec-title">Introducing <em>the Finnies</em></div>
-        <div class="aec-subtitle">The AEC Financial Leadership Awards</div>
-        <div class="aec-credit">
-          Powered by <a href="https://stambaughness.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Stambaugh Ness</a> &nbsp;·&nbsp; Presented in partnership with <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Zweig Group</a>
-        </div>
-
-        <p class="aec-desc">
-          The Finnies recognize exceptional finance professionals in the AEC industry who demonstrate strategic leadership, sound financial stewardship, and a measurable impact on their firm's performance and long-term success. This award honors <b>CFOs, Finance Directors, Controllers, and other financial leaders</b> who go beyond day-to-day financial management to serve as trusted advisors, growth partners, and leaders within their organizations.
-        </p>
-
-        <p class="aec-desc">
-          Up to three Finnies will be awarded — one in each firm-size category:
-        </p>
-
-        <div class="aec-categories">
-          <div class="aec-cat-card">
-            <div class="aec-cat-label">Small Firm</div>
-            <div class="aec-cat-detail">Under $10M<br/>annual revenue</div>
-          </div>
-          <div class="aec-cat-card">
-            <div class="aec-cat-label">Mid-Sized Firm</div>
-            <div class="aec-cat-detail">$10M – $50M<br/>annual revenue</div>
-          </div>
-          <div class="aec-cat-card">
-            <div class="aec-cat-label">Large Firm</div>
-            <div class="aec-cat-detail">Over $50M<br/>annual revenue</div>
-          </div>
-        </div>
-
-        <p class="aec-desc">
-          Recipients exemplify excellence in <b>financial strategy, risk management, operational insight,</b> and <b>collaboration</b> — leaders helping their firms navigate change, drive value, and position themselves for a strong future.
-        </p>
-
-        <div class="aec-bottom-row">
-          <div class="aec-deadline">
-            <span class="aec-deadline-label">Nominations Due</span>
-            <span class="aec-deadline-date">June 12, 2026</span>
-          </div>
-          <a href="https://tally.so/r/VLZpgg" target="_blank" rel="noopener" class="aec-cta">
-            Submit a Nomination →
-          </a>
-        </div>
-
-        <div class="aec-save-date">
-          <span class="aec-save-date-label">Winners Presented At</span>
-          <a href="https://zweiggroup.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" class="aec-save-date-link">ElevateAEC Conference</a>
-          <span class="aec-save-date-detail">&nbsp;·&nbsp; September 29 – October 1, 2026 &nbsp;·&nbsp; Park City, Utah</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="rule-gold"><div class="rule-gold-center"></div></div>
-
-    <!-- LIVE EVENTS & TRAINING — IN SPOTLIGHT FRAME -->
-    <section id="events">
-      <div class="spotlight">
-        <div style="display:flex;align-items:center;gap:16px;margin:0 0 28px 0;">
-          <span class="sec-label" style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;">Upcoming Live Events &amp; Training</span>
-          <div style="flex:1;height:2px;background:rgba(255,255,255,0.15);"></div>
-          <div style="width:28px;height:4px;background:#FFB81C;border-radius:2px;flex-shrink:0;"></div>
-        </div>
-
-        <p style="font-size:14px;color:#ffffff;line-height:1.7;margin-bottom:24px;padding:14px 18px;background:var(--teal);border-left:3px solid var(--gold);">This quarter's live training sessions mark the first step in a firm-wide rollout of intentional development at Stambaugh Ness — the foundation for more robust practice area development and personalized individual growth opportunities on the horizon. Every team member is expected to attend at least one session per quarter. Register and track your progress in SPI.</p>
-
-        <div class="events-grid">
-          <div class="event-card">
-            <img src="https://www.odgersinterim.com/fileadmin/_processed_/d/6/csm_Active_Listening_in_the_workplace_90134e6f12.jpg" alt="Active Listening" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
-            <div class="event-badge"><span class="mo">APR</span><span class="dy">2026</span></div>
-            <div class="event-title">Active Listening: The #1 Power Skill</div>
-            <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
-            <div class="event-desc">Learn to listen with the intent to understand — not just respond. Practice presence, paraphrasing, and reflective listening in client and team conversations.</div>
-            <br>
-            <a href="https://spi.stambaughness.com/learn/courses/844/active-listening-the-1-power-skill/sessions/27/active-listening-the-1-power-skill" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">View Past Recording →</a>
-          </div>
-          <div class="event-card">
-            <img src="https://www.toastmasters.org/magazine/magazine-issues/2022/apr/medias/images/pubs-and-magazine/2022-digital-magazine/04/awkward-conversations/22-awkward-conversations-main.png" alt="Coaching Conversations" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
-            <div class="event-badge"><span class="mo">MAY</span><span class="dy">2026</span></div>
-            <div class="event-title">Coaching Conversations</div>
-            <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
-            <div class="event-desc">Coaching isn't just a manager tool — it's how every professional accelerates growth. Learn when to coach vs. advise and how to hold a high-impact coaching conversation.</div>
-            <br>
-            <a href="https://spi.stambaughness.com/learn/courses/886/coaching-conversations" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">Registration is Open! →</a>
-          </div>
-          <div class="event-card">
-            <img src="https://blog.insynctraining.com/hubfs/09152020%20Facilitation%20Tips%20Series%20Blog%20Part%202%20Feedback.png" alt="Giving and Receiving Feedback" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
-            <div class="event-badge"><span class="mo">JUN</span><span class="dy">2026</span></div>
-            <div class="event-title">Giving &amp; Receiving Feedback</div>
-            <div class="event-meta">Live Above the Line &nbsp;·&nbsp; All Staff</div>
-            <div class="event-desc">Master the Situation-Behavior-Impact feedback model. Build a culture where feedback is expected, welcomed, and acted on at every level of the organization.</div>
-          </div>
-          <div class="event-card" style="background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,184,28,0.45);border-bottom:1.5px dashed rgba(255,184,28,0.45);display:flex;align-items:center;justify-content:center;text-align:center;">
-            <div>
-              <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;">Requirement</div>
-              <div style="font-size:22px;font-weight:800;color:#FFB81C;line-height:1.2;">1 Session<br/>Per Quarter</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:8px;">All sessions tracked<br/>in SPI / Rippling</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="rule-gold"><div class="rule-gold-center"></div></div>
-
-    <!-- WISE & WELL — WELLNESS PARTNER RESOURCES -->
-    <section id="wisewell">
-      <div class="rec-wrap">
+    <!-- WISE & WELL, SPOTLIGHT 2, WELLNESS PARTNER RESOURCES -->
+    <section id="wisewell" class="feature-spotlight-numbered">
+      <div class="rec-wrap" style="position:relative;">
+        <div class="num-deco">2</div>
         <div class="sec-head" style="margin-top:0">
           <span class="sec-label" style="color:var(--text-light)">Wise &amp; Well · From Our Partners at NFP</span>
           <div class="sec-line"></div>
           <div class="sec-pip"></div>
         </div>
 
-        <p class="ww-intro">Through our benefits partnership with <b>NFP</b>, all SN team members have access to <b>Wise &amp; Well</b> — a year-round whole-person wellbeing program with expert-led webinars, monthly newsletters, on-demand resources, and the Wise &amp; Well Digital Experience.</p>
+        <p class="ww-intro">Through our benefits partnership with <b>NFP</b>, all SN team members have access to <b>Wise &amp; Well</b>, a year-round whole-person wellbeing program with expert-led webinars, monthly newsletters, on-demand resources, and the Wise &amp; Well Digital Experience.</p>
 
         <!-- FEATURED WEBINAR -->
         <div class="ww-webinar">
@@ -551,7 +437,7 @@
           <h3 class="ww-webinar-title">Staying Present in Unpredictable Times</h3>
           <div class="ww-webinar-subtitle">Cultivating Calm, Connection, and Clarity</div>
 
-          <p class="ww-webinar-desc">An interactive session designed to help you build mental flexibility and stay grounded during times of stress. Learn how the nervous system responds to overwhelm and explore practical strategies — rooted in environment, relationships, and values — to support presence and resilience.</p>
+          <p class="ww-webinar-desc">An interactive session designed to help you build mental flexibility and stay grounded during times of stress. Learn how the nervous system responds to overwhelm and explore practical strategies, rooted in environment, relationships, and values, to support presence and resilience.</p>
 
           <div class="ww-webinar-grid">
             <div>
@@ -578,18 +464,241 @@
 
           <p class="ww-webinar-note">Can't make it live? The session will be recorded and shared with all registrants. All past Wise &amp; Well webinars are available in NFP's Wise &amp; Well Digital Experience.</p>
         </div>
+      </div>
+    </section>
 
-        <!-- MAY NEWSLETTER HIGHLIGHTS -->
-        <div class="ww-monthly">
-          <div class="ww-monthly-header">
-            <span class="ww-monthly-tag">Also This Month</span>
-            <span class="ww-monthly-title">May Wise &amp; Well Newsletter</span>
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- Q2 WELLNESS CHALLENGE -->
+    <section id="wellness-challenge">
+      <div class="sec-head">
+        <span class="sec-label">Wellness Initiative</span>
+        <div class="sec-line"></div>
+        <div class="sec-pip"></div>
+      </div>
+
+      <div class="challenge-block">
+        <!-- Vertical Side Banner -->
+        <aside class="challenge-banner">
+          <div class="cb-quarter">Q2</div>
+          <div class="cb-divider"></div>
+          <div class="cb-icon">🥗</div>
+          <div class="cb-title">Cooking <em>&amp;</em><br/>Nutrition</div>
+          <div class="cb-subtitle">Challenge</div>
+          <div class="cb-bottom">
+            <div class="cb-month">May</div>
+            <div class="cb-year">2026</div>
           </div>
-          <ul class="ww-monthly-list">
-            <li><b>Mental Health Awareness Month —</b> recognizing early signs of stress, the power of small daily habits, and why caring for your mental wellbeing isn't a luxury.</li>
-            <li><b>Monthly Moves: The Resistance Band Leg Workout —</b> squats, glute bridges, lunges, and lateral walks you can do almost anywhere.</li>
-            <li><b>Recipe: Strawberry Crisp —</b> juicy in-season berries with a buttery oat crumble. Add a scoop of vanilla ice cream and you have early summer in a bowl.</li>
-          </ul>
+        </aside>
+
+        <!-- Content -->
+        <div class="challenge-content">
+          <div class="challenge-content-eyebrow">2026 Wellness Initiative</div>
+          <h3 class="challenge-content-hed">Eat Well. <em>Earn Entries.</em> Win Prizes.</h3>
+          <p class="challenge-intro">We're continuing our 2026 Wellness Initiative with a focus on nutrition and healthy eating habits. This quarter's challenge is all about encouraging simple, sustainable ways to fuel your body.</p>
+
+          <div class="challenge-grid">
+            <div class="challenge-card">
+              <div class="cc-label">How It Works</div>
+              <p>Over a four-week period, earn raffle entries by sharing your healthy meal choices.</p>
+              <ul class="cc-weeks">
+                <li><b>Week 1:</b> May 1 to 8</li>
+                <li><b>Week 2:</b> May 9 to 15</li>
+                <li><b>Week 3:</b> May 16 to 22</li>
+                <li><b>Week 4:</b> May 23 to 29</li>
+              </ul>
+            </div>
+
+            <div class="challenge-card">
+              <div class="cc-label">How to Participate</div>
+              <p>At the start of each week (Monday), a new thread will be posted in the SN Wellness Teams channel. Submit one photo per week of a healthy, intentional nutrition choice (food, drink, snack, anything that supports your personal health goals). Each photo earns 1 raffle entry, up to 4 total entries.</p>
+              <div class="cc-bonus"><b>Bonus entry available:</b> include the recipe and how the meal supports your health goals (1 bonus entry).</div>
+            </div>
+
+            <div class="challenge-card">
+              <div class="cc-label">Prizes</div>
+              <p>Three raffle winners will be selected from all participants. HR provides a curated prize list, and winners select their preferred option.</p>
+            </div>
+          </div>
+
+          <div class="challenge-dates">
+            <div class="cd-row"><span class="cd-label">Kickoff</span><span class="cd-value">April 27, 2026</span></div>
+            <div class="cd-row"><span class="cd-label">Challenge Runs</span><span class="cd-value">May 4 to May 29, 2026</span></div>
+            <div class="cd-row"><span class="cd-label">Winners Announced</span><span class="cd-value">First week of June</span></div>
+          </div>
+
+          <p class="challenge-footer">All team members have been added to the SN Wellness Teams Channel. If you can't access the channel, reach out to <b>Jayme Chapman</b> or <b>Angie Frain</b>. To opt out, simply leave the channel. Whether you're trying something new or sticking to your favorites, participate in a way that works for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- FIRM WIN CALLOUT -->
+    <div class="win-callout" style="margin:52px -52px 0;">
+      <div class="win-icon">🏆</div>
+      <div>
+        <div class="win-label">Firm Win</div>
+        <div class="win-text">
+          Steven L. Hake, CPA, President &amp; CEO, named to the 2026 Forbes Best-In-State CPAs list, recognized for his leadership in the AEC industry.
+          <a href="https://www.linkedin.com/posts/forbesbestcpas-aecleadership-stambaughness-share-7454691690189258752-F_n2" target="_blank"
+             style="display:inline-block;margin-left:10px;padding:6px 12px;background-color:#232c60;color:#ffffff;text-decoration:none;font-size:12px;border-radius:3px;font-weight:600;">
+             View on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYEE VOICES, KRISTI'S HYNER STORY -->
+    <section id="voices" class="voices-block">
+      <div class="voices-eyebrow">Employee Voices · Hyner Trail Challenge 2026</div>
+
+      <h2 class="voices-quote">"Last year I learned a lot about <em>grit</em>. This year it is about <em>appreciation</em>."</h2>
+
+      <div class="voices-byline">
+        <div class="voices-byline-name">By <a href="https://www.linkedin.com/in/kristiweierbach" target="_blank" rel="noopener">Kristi Weierbach</a></div>
+        <div class="voices-byline-role">Managing Director, Workforce Advisory &nbsp;·&nbsp; Stambaugh Ness</div>
+      </div>
+
+      <div class="voices-body">
+        <p>Hyner Trail Challenge 2026… I did it again! This picture nearly brought me to tears, as it just shows how the running/hiking community shows up in ways you least expect it. This moment is right at the top of the Hyner View, four miles in and twelve more to go. I do not know this little girl or the photographer, but it will leave a lasting impression on me, and I am sure all the other participants she cheered on that day.</p>
+
+        <p>There were 1,500 people who were registered for the challenge (five hundred for the 50k and 1,000 for the 25k) with 1,234 who crossed the finish line (391 for the 50k and 843 for the 25k). I completed the challenge in 6 hours and 32 minutes, an improvement of 38 minutes from last year. This may not seem like a lot, but it is significant given the terrain.</p>
+
+        <figure class="voices-figure">
+          <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Hyner-2026-Kristi.jpg?raw=true" alt="Kristi Weierbach trading a high-five with a young supporter at the summit of Hyner View, with the Pennsylvania ridge stretching behind them"/>
+          <figcaption>The summit of Hyner View, four miles in, twelve more to go.</figcaption>
+        </figure>
+
+        <p>Last year I pushed myself physically and mentally beyond what I thought was even possible. Over the past year I trained differently so I could perform better and be more prepared. What I did not expect was the extreme self-doubt and nervousness that settled in. There were several times I wanted to find an excuse to tap out before and during the challenge. I kept repeating words that my accountability partner shared with me the day before, <em>one step at a time.</em></p>
+
+        <p>I received several other messages the day before and the day of the event, and quite honestly if I did not have those on repeat in my head, I am not sure that I would have persevered. Additionally, we lost someone very near and dear to us at SN (<a href="https://www.linkedin.com/in/susanspatrick/" target="_blank" rel="noopener">Susan Patrick</a>), and so she was on my mind a lot too as I worked my way through the trails.</p>
+
+        <p>Last year I learned a lot about grit and this year it is about appreciation. The people who selflessly share words of encouragement, cheer others on, and believe in you when you are struggling to believe in yourself. My goal this year is to do better, give more encouragement, cheer more, and show up for those who need it most. As I sit here recovering, I am unsure if I will do it again, but if someone asked me to help them do the challenge I would show up in a heartbeat.</p>
+      </div>
+
+      <div class="voices-hashtag">#hynerchallenge26</div>
+
+      <div class="voices-attrib">
+        Originally shared on
+        <a href="https://www.linkedin.com/feed/update/urn:li:share:7452392084478656512/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- ZWEIG STRATEGIC PARTNERSHIP, THE FINNIES -->
+    <section id="zweig">
+      <div class="sec-head">
+        <span class="sec-label">Strategic Partnership</span>
+        <div class="sec-line"></div>
+        <div class="sec-pip"></div>
+      </div>
+
+      <p class="partnership-intro">
+        A flagship initiative co-launched with our partners at <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:none;border-bottom:1px solid var(--gold);">Zweig Group</a>: industry-wide recognition for the financial leaders shaping the future of AEC.
+      </p>
+
+      <!-- Finnies gold block -->
+      <div class="aec-awards" style="margin-top:22px;">
+        <div class="aec-eyebrow">Now Accepting Nominations</div>
+        <div class="aec-title">Introducing <em>the Finnies</em></div>
+        <div class="aec-subtitle">The AEC Financial Leadership Awards</div>
+        <div class="aec-credit">
+          Powered by <a href="https://stambaughness.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Stambaugh Ness</a> &nbsp;·&nbsp; Presented in partnership with <a href="https://zweiggroup.com/?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener">Zweig Group</a>
+        </div>
+
+        <p class="aec-desc">
+          The Finnies recognize exceptional finance professionals in the AEC industry who demonstrate strategic leadership, sound financial stewardship, and a measurable impact on their firm's performance and long-term success. This award honors <b>CFOs, Finance Directors, Controllers, and other financial leaders</b> who go beyond day-to-day financial management to serve as trusted advisors, growth partners, and leaders within their organizations.
+        </p>
+
+        <p class="aec-desc">
+          Up to three Finnies will be awarded, one in each firm-size category:
+        </p>
+
+        <div class="aec-categories">
+          <div class="aec-cat-card">
+            <div class="aec-cat-label">Small Firm</div>
+            <div class="aec-cat-detail">Under $10M<br/>annual revenue</div>
+          </div>
+          <div class="aec-cat-card">
+            <div class="aec-cat-label">Mid-Sized Firm</div>
+            <div class="aec-cat-detail">$10M – $50M<br/>annual revenue</div>
+          </div>
+          <div class="aec-cat-card">
+            <div class="aec-cat-label">Large Firm</div>
+            <div class="aec-cat-detail">Over $50M<br/>annual revenue</div>
+          </div>
+        </div>
+
+        <p class="aec-desc">
+          Recipients exemplify excellence in <b>financial strategy, risk management, operational insight,</b> and <b>collaboration</b>, leaders helping their firms navigate change, drive value, and position themselves for a strong future.
+        </p>
+
+        <div class="aec-bottom-row">
+          <div class="aec-deadline">
+            <span class="aec-deadline-label">Nominations Due</span>
+            <span class="aec-deadline-date">June 12, 2026</span>
+          </div>
+          <a href="https://tally.so/r/VLZpgg" target="_blank" rel="noopener" class="aec-cta">
+            Submit a Nomination →
+          </a>
+        </div>
+
+        <div class="aec-save-date">
+          <span class="aec-save-date-label">Winners Presented At</span>
+          <a href="https://zweiggroup.com/pages/annual-elevateaec-conference?utm_source=stambaugh-ness&amp;utm_medium=form&amp;utm_campaign=finnies" target="_blank" rel="noopener" class="aec-save-date-link">ElevateAEC Conference</a>
+          <span class="aec-save-date-detail">&nbsp;·&nbsp; September 29 – October 1, 2026 &nbsp;·&nbsp; Park City, Utah</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-gold"><div class="rule-gold-center"></div></div>
+
+    <!-- LIVE EVENTS & TRAINING, IN SPOTLIGHT FRAME -->
+    <section id="events">
+      <div class="spotlight">
+        <div style="display:flex;align-items:center;gap:16px;margin:0 0 28px 0;">
+          <span class="sec-label" style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;">Upcoming Live Events &amp; Training</span>
+          <div style="flex:1;height:2px;background:rgba(255,255,255,0.15);"></div>
+          <div style="width:28px;height:4px;background:#FFB81C;border-radius:2px;flex-shrink:0;"></div>
+        </div>
+
+        <p style="font-size:14px;color:#ffffff;line-height:1.7;margin-bottom:24px;padding:14px 18px;background:var(--teal);border-left:3px solid var(--gold);">This quarter's live training sessions mark the first step in a firm-wide rollout of intentional development at Stambaugh Ness, the foundation for more robust practice area development and personalized individual growth opportunities on the horizon. Every team member is expected to attend at least one session per quarter. Register and track your progress in SPI.</p>
+
+        <div class="events-grid">
+          <div class="event-card">
+            <img src="https://www.odgersinterim.com/fileadmin/_processed_/d/6/csm_Active_Listening_in_the_workplace_90134e6f12.jpg" alt="Active Listening" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+            <div class="event-badge"><span class="mo">APR</span><span class="dy">2026</span></div>
+            <div class="event-title">Active Listening: The #1 Power Skill</div>
+            <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
+            <div class="event-desc">Learn to listen with the intent to understand, not just respond. Practice presence, paraphrasing, and reflective listening in client and team conversations.</div>
+            <br>
+            <a href="https://spi.stambaughness.com/learn/courses/844/active-listening-the-1-power-skill/sessions/27/active-listening-the-1-power-skill" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">View Past Recording →</a>
+          </div>
+          <div class="event-card">
+            <img src="https://www.toastmasters.org/magazine/magazine-issues/2022/apr/medias/images/pubs-and-magazine/2022-digital-magazine/04/awkward-conversations/22-awkward-conversations-main.png" alt="Coaching Conversations" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+            <div class="event-badge"><span class="mo">MAY</span><span class="dy">2026</span></div>
+            <div class="event-title">Coaching Conversations</div>
+            <div class="event-meta">Gallup CliftonStrengths &nbsp;·&nbsp; All Staff</div>
+            <div class="event-desc">Coaching isn't just a manager tool. It's how every professional accelerates growth. Learn when to coach vs. advise and how to hold a high-impact coaching conversation.</div>
+            <br>
+            <a href="https://spi.stambaughness.com/learn/courses/886/coaching-conversations" target="_blank" style="display:inline-block;color:#ffffff;background:#1f6f6a;padding:6px 12px;border-radius:3px;font-weight:600;text-decoration:none;">Registration is Open! →</a>
+          </div>
+          <div class="event-card">
+            <img src="https://blog.insynctraining.com/hubfs/09152020%20Facilitation%20Tips%20Series%20Blog%20Part%202%20Feedback.png" alt="Giving and Receiving Feedback" style="width:100%;height:120px;object-fit:cover;display:block;margin:-20px -20px 16px -20px;width:calc(100% + 40px);"/>
+            <div class="event-badge"><span class="mo">JUN</span><span class="dy">2026</span></div>
+            <div class="event-title">Giving &amp; Receiving Feedback</div>
+            <div class="event-meta">Live Above the Line &nbsp;·&nbsp; All Staff</div>
+            <div class="event-desc">Master the Situation-Behavior-Impact feedback model. Build a culture where feedback is expected, welcomed, and acted on at every level of the organization.</div>
+          </div>
+          <div class="event-card" style="background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,184,28,0.45);border-bottom:1.5px dashed rgba(255,184,28,0.45);display:flex;align-items:center;justify-content:center;text-align:center;">
+            <div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;">Requirement</div>
+              <div style="font-size:22px;font-weight:800;color:#FFB81C;line-height:1.2;">1 Session<br/>Per Quarter</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:8px;">All sessions tracked<br/>in SPI / Rippling</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -605,12 +714,15 @@
       </div>
 
       <div class="photo-moment">
-        <div class="photo-placeholder">
-          <div class="photo-placeholder-icon">📸</div>
-          <div class="photo-placeholder-text">[Replace with May Snapshot Image]</div>
-        </div>
+        <img src="https://github.com/StambaughNess/SN-Pulse/blob/main/images/Team%20Picture.jpg?raw=true" alt="SN and Zweig Group Leadership Team at the 2026 Leadership Conference in Dallas, TX" style="width:100%; max-height:360px; object-fit:cover; display:block;"/>
         <div class="photo-caption">
-          [Caption — e.g., a wellness event, team walk, May milestone, or an SN moment worth capturing.]
+          SN + Zweig Group Leadership Team at the 2026 Leadership Conference in Dallas, TX.
+        </div>
+        <div class="snapshot-blurb">
+          <div class="snapshot-blurb-eyebrow">From The Zweig Letter</div>
+          <h4 class="snapshot-blurb-title">One Year Strong, and <em>Just Getting Started</em></h4>
+          <p class="snapshot-blurb-body">CEOs Steve Hake and Chad Clinehens reflect on year one of the SN + Zweig partnership: unified M&amp;A and ownership transition services, broader talent solutions, and deeper industry research, all built around the belief that AEC firms deserve aligned thinking and genuine collaboration.</p>
+          <a href="https://zweiggroup.com/blogs/the-zweig-letter/aec-partnership-growth-transition-services" target="_blank" rel="noopener" class="snapshot-blurb-cta">Read the Letter →</a>
         </div>
       </div>
     </section>
@@ -627,7 +739,7 @@
       <ul class="res-list">
         <li class="res-item"><div><div class="res-tag">Health &amp; Wellness</div><div class="res-title">SPI Health &amp; Wellness Catalog <span class="en">New</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Browse →</a></li>
         <li class="res-item"><div><div class="res-tag">Tool / Platform</div><div class="res-title">Skills &amp; Performance Institute <span class="en">SPI</span></div></div><a href="https://spi.stambaughness.com/" class="res-cta">Access →</a></li>
-        <li class="res-item"><div><div class="res-tag">Industry Initiative</div><div class="res-title">The Finnies — AEC Financial Leadership Awards <span class="en">Due June 12</span></div></div><a href="https://tally.so/r/VLZpgg" class="res-cta">Nominate →</a></li>
+        <li class="res-item"><div><div class="res-tag">Industry Initiative</div><div class="res-title">The Finnies, AEC Financial Leadership Awards <span class="en">Due June 12</span></div></div><a href="https://tally.so/r/VLZpgg" class="res-cta">Nominate →</a></li>
         <li class="res-item"><div><div class="res-tag">Mental Health</div><div class="res-title">Employee Assistance Program (EAP) <span class="en">Confidential</span></div></div><a href="#" class="res-cta">Learn More →</a></li>
         <li class="res-item"><div><div class="res-tag">Article / Podcast</div><div class="res-title">The Power of Mattering <span class="en">Zach Mercurio</span></div></div><a href="https://www.youtube.com/watch?v=WSjdcc3rvTw" class="res-cta">Watch/Listen →</a></li>
         <li class="res-item"><div><div class="res-tag">Policy / Document</div><div class="res-title">SN AI Policy <span class="en">AI</span></div></div><a href="https://sn.sharepoint.com/:b:/s/SNAIInsights/IQCb5oF3lv6TQ46MwdADgWpIAYMvNFG2-NX9Eyc535rVM5M?e=dgm2Ck" class="res-cta">View →</a></li>
